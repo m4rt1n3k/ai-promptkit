@@ -1,8 +1,11 @@
-# AI vibecoding — agent handoff
+# ai-promptkit — agent handoff
 
-Team-ProGrammar workspace for **conversation handoff** and vibecoding practices. Canonical kit: repo-root [`PROMPT.md`](./PROMPT.md) + [`TODO.md`](./TODO.md).
+Git repo for Team-ProGrammar **conversation handoff** and vibecoding practices. Canonical kit: repo-root [`PROMPT.md`](./PROMPT.md) + [`TODO.md`](./TODO.md).
 
-Migrated from standalone `C:\Users\VLAD\agent-handoff` (2026-06-02). Full specification: [`PROMPT-TODO-handoff-plan.md`](./PROMPT-TODO-handoff-plan.md).
+- **Remote:** [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
+- **Local clone:** `C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit`
+
+Evolved from standalone `C:\Users\VLAD\agent-handoff` and a SharePoint **AI vibecoding** folder (2026-06-02). Full specification: [`PROMPT-TODO-handoff-plan.md`](./PROMPT-TODO-handoff-plan.md).
 
 ## Quick start (new agent)
 

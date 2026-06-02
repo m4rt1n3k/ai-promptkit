@@ -22,7 +22,7 @@ handoff notes: (what changed, blockers, active plan-id)
 
 ## Behavior
 
-Runs the meta-prompt in `export-handoff-prefill.json`: merges `PROMPT.md` and `TODO.md` at the **workspace repo root** (the project the automation checks out or runs against). Point the automation at this **AI vibecoding** folder, or copy this kit’s files into another repo first.
+Runs the meta-prompt in `export-handoff-prefill.json`: merges `PROMPT.md` and `TODO.md` at the **workspace repo root** (the project the automation checks out or runs against). Point the automation at **ai-promptkit** ([github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)), or copy this kit’s files into another repo first.
 
 ## Related
 

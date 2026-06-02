@@ -4,7 +4,7 @@ Use this checklist to confirm a **new agent** can continue without chat history.
 
 ## Preconditions
 
-- Workspace root is **AI vibecoding** (this folder) or a repo that copied these files.
+- Workspace root is **ai-promptkit** (`C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit` or your clone) or a repo that copied these files.
 - `.cursor/rules/agent-handoff-bootstrap.mdc` is present (`alwaysApply: true`).
 
 ## Steps
@@ -33,6 +33,6 @@ Use this checklist to confirm a **new agent** can continue without chat history.
 
 ## This session (2026-06-02)
 
-Kit migrated from `agent-handoff` into Team-ProGrammar **AI vibecoding** folder.
+Kit canonical home is git repo **ai-promptkit** ([m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)); earlier stops were `agent-handoff` and SharePoint **AI vibecoding**.
 
-**Simulated cold-start answer (reference):** Active track is `_none_` until next handoff sets a plan-id. Next work for user: save automation in UI if needed, run handoff at session end, optional roll-out to other repos (TODO plan-5, plan-6).
+**Simulated cold-start answer (reference):** Active track is `_none_` until next handoff sets a plan-id. Confirm §5: branch `main`, remote `origin`, paths under `HOME\CODE_m4rt1n3k\ai-promptkit`. Next work: save automation in UI if needed, run handoff at session end, optional roll-out (TODO plan-5, plan-6).

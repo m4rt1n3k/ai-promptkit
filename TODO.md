@@ -68,7 +68,8 @@
 | plan-2 | Create Cursor Automation prefill | 2026-06-02 | `automations/export-handoff-prefill.json` + README |
 | plan-3 | Bootstrap cursor rule | 2026-06-02 | `.cursor/rules/agent-handoff-bootstrap.mdc` |
 | plan-4 | First handoff export + cold-start verify | 2026-06-02 | `docs/COLD-START-VERIFY.md`; PROMPT/TODO populated |
-| plan-7 | Migrate kit to AI vibecoding workspace | 2026-06-02 | This folder is canonical home (D5) |
+| plan-7 | Migrate kit to AI vibecoding workspace | 2026-06-02 | SharePoint folder; superseded by plan-8 (D6) |
+| plan-8 | Canonical home in ai-promptkit git repo | 2026-06-02 | `github.com/m4rt1n3k/ai-promptkit`; PROMPT §5 + README updated |
 
 ---
 
@@ -79,3 +80,4 @@
 | plan-prompt-todo | 2026-06-02 | — | 2026-06-02 (planning) |
 | implement-plan | 2026-06-02 | plan-1, plan-2, plan-3, plan-4 | 2026-06-02 (implementation) |
 | move-to-ai-vibecoding | 2026-06-02 | plan-7 | 2026-06-02 (migration) |
+| canonical-git-home | 2026-06-02 | plan-8 | 2026-06-02 (repo-placement) |

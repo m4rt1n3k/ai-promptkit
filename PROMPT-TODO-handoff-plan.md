@@ -19,6 +19,8 @@ isProject: false
 
 # Conversation handoff via `PROMPT.md` + `TODO.md`
 
+**Canonical git home (2026-06-02):** [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit) — local clone `C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit`. Older SharePoint **AI vibecoding** and `agent-handoff` paths are historical; live handoff state follows the git repo.
+
 ## Is this a good plan?
 
 **Yes**, with three refinements:
