@@ -1,89 +1,76 @@
-# PROMPT.md — agent handoff
+# PROMPT.md — ai-promptkit
 
 ## 0. Meta
 
-- Purpose: Maintain distilled agent memory and session continuity when switching LLMs or starting fresh chats.
-- Audience: coding agent / reviewer
+- Purpose: Kit workers for handoff and design discipline on **other** repos (and this repo when asked).
 - Last updated: 2026-06-02
-- Active track: none (see [TODO.md](./TODO.md); run handoff to set next plan-id)
+- Active track: `_none_` (see [TODO.md](./TODO.md))
 - Companion: [TODO.md](./TODO.md)
-- Repo: **ai-promptkit** — ProGrammar team handoff kit ([github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)); evolved from `agent-handoff` and SharePoint **AI vibecoding**
+- Repo: [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
 
 ## 1. Mission
 
-Provide a **repeatable handoff system** in this workspace: repo-root **`PROMPT.md`** (truth, constraints, current state, tagged log) and **`TODO.md`** (prioritized plans and mind-branches). A new agent with zero chat history can continue work using only these files, the repo, and `.cursor/rules`.
+Ship **`kits/*.md`** workers invoked from another workspace:
 
-**Definition of done (this repo):** Handoff kit present; bootstrap rule active; automation prefill documented; **ai-promptkit** is the canonical git home for the PROMPT/TODO pattern (reference kit + team docs).
+```text
+from workspace ai-promptkit run kit_prompt
+from workspace ai-promptkit run kit_todo
+from workspace ai-promptkit run kit_handoff
+from workspace ai-promptkit run kit_design
+```
 
-## 2. Hard constraints (must not violate)
+Default: write to the **opened project**. This repo is the target only when the user says so (e.g. `run kit_handoff on yourself`).
 
-1. **Distill, do not archive** — `PROMPT.md` is not a chat transcript.
-2. **Canonical filename** — always `PROMPT.md` (capitals) for new work.
-3. **Split memory from backlog** — near-term actions in PROMPT §6; multi-track work in `TODO.md`.
-4. **Append-only log** — section 9 rows are appended, not rewritten per message.
-5. **No secrets** in either file.
-6. **Do not duplicate** full `.cursor/rules` text — reference paths only.
-7. **Do not edit** the Cursor plan file at `~/.cursor/plans/conversation_handoff_prompt.md_4122d518.plan.md`.
+## 2. Hard constraints
 
-## 3. User inputs (verbatim where it matters)
+1. **Distill** — handoff files are not chat logs.
+2. **`kit_todo`** — only TODO items the **user stated** in that chat; do not invent backlog.
+3. **No secrets** in handoff files.
+4. **Minimal kits** — no dispatcher, cold-start docs, or automation layer in this repo (IDE invoke only).
 
-- [binding] Store conversation extract for LLM switch: **what** and **how**, important things, hierarchical — so a different agent can repeat work from scratch.
-- [binding] Use **`PROMPT.md`** (capitals); keep **`TODO.md`** beside it for structured plans and **mind-branches** in the pipeline.
-- [binding] Tag conversation log with **session/chat topics**; tag TODO items with **must-have** / **nice-to-have** and **time-related prioritization** (`now`, `next`, `soon`, `later`, `by:YYYY-MM-DD`).
-- [binding] Canonical home is the **ai-promptkit** git repo (was agent-handoff, then SharePoint AI vibecoding).
-- [preference] Meta-prompt suitable for **Cursor Automations**; explicit trigger (handoff / export) because scheduled runs may lack chat context unless notes are provided.
+## 3. User inputs (binding / preference)
 
-## 4. Decisions made
+- [binding] Invoke from other workspaces: `from workspace ai-promptkit run <kit>`.
+- [binding] `PROMPT.md` + `TODO.md` on target repos; merge, append-only §9 log on targets.
+- [preference] `kit_design`: minimal optimal solution; do not go deep into possibilities (rule on target).
+- [preference] Simplified toolbox—removed extra docs/automations/rules from earlier iteration.
 
-| ID | Decision | Why | Alternatives rejected |
-|----|----------|-----|------------------------|
-| D1 | Two-file split: `PROMPT.md` + `TODO.md` | Separates durable truth from prioritized backlog | Single combined file (too noisy) |
-| D2 | Log columns: Date, Topics, Session, Summary | Topics vs session disambiguates threads | Untagged date-only log |
-| D3 | TODO severity: must-have \| nice-to-have | Clear milestone blocking | Priority P0/P1 only |
-| D4 | TODO time: now \| next \| soon \| later \| by:date | Time prioritization without over-planning | Due dates only |
-| D5 | Canonical kit in **AI vibecoding** workspace (SharePoint) | Team docs folder; replaced standalone `agent-handoff` | Keep only `C:\Users\VLAD\agent-handoff` — **superseded 2026-06-02** by D6 |
-| D6 | Canonical kit in **ai-promptkit** git repo | Versioned source of truth; GitHub + local clone under `HOME\CODE_m4rt1n3k` | SharePoint-only or unversioned folder |
+## 4. Decisions
+
+| ID | Decision | Why |
+|----|----------|-----|
+| D1 | IDE phrase invoke, not in-repo dispatcher | User: too complicated |
+| D2 | `kit_design` → `.cursor/rules/kit-design.mdc` on target | Behavioral setup separate from handoff files |
+| D3 | Target `kit_todo` = user-mentioned tasks only | User: do not invent unless asked |
 
 ## 5. Current state
 
-- Branch: `main` @ `df25257` (tracks `origin/main`)
-- Remote: `https://github.com/m4rt1n3k/ai-promptkit.git`
-- Workspace (local): `C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit`
-- Files: `PROMPT.md`, `TODO.md`, `README.md`, `PROMPT-TODO-handoff-plan.md` (full spec), `.cursor/rules/agent-handoff-bootstrap.mdc`, `automations/`, `docs/COLD-START-VERIFY.md`
-- Works: Full handoff kit; git initialized; bootstrap rule applies in this repo
-- Pending: User saves automation in Cursor UI if not done yet; roll out to other repos (TODO plan-5, plan-6)
-- Historical locations: `C:\Users\VLAD\agent-handoff`; SharePoint `Team-ProGrammar - Dokumenty\AI vibecoding` (may lag git — treat this repo as canonical)
-- Open questions: Which target repos adopt first (asset-ontology, em-testbench, PV placement)? Sync SharePoint copy from git or retire folder?
+- Branch: `main` (tracks `origin/main`; local ahead of last push — uncommitted)
+- Path: `C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit`
+- **In repo:** `README.md`, `PROMPT.md`, `TODO.md`, `kits/` (`kit_prompt`, `kit_todo`, `kit_handoff`, `kit_design`, `templates/`)
+- **Removed (uncommitted):** `docs/`, `automations/`, `.cursor/rules/`, `PROMPT-TODO-handoff-plan.md`
+- Works: four kits documented in README; templates for PROMPT/TODO/design rule
 
-## 6. Next actions (ordered, near-term only)
+## 6. Next actions
 
-1. **Save** the handoff automation in Cursor Automations (from `automations/export-handoff-prefill.json`) if not already saved.
-2. Run **handoff** at end of sessions in this workspace (or say **export PROMPT**).
-3. Optional: copy kit into other active repos; see TODO plan-5, plan-6.
+1. Commit and push when you want the simplified kit layout on GitHub.
+2. On other repos: `from workspace ai-promptkit run kit_prompt` (etc.) — see TODO `roll-out-kits` if batching later.
+3. Later: refine `kit_design` — TODO `kit-design-refine`.
 
 ## 7. References
 
-- Full spec (local): [PROMPT-TODO-handoff-plan.md](./PROMPT-TODO-handoff-plan.md)
-- Plan (read-only): `C:\Users\VLAD\.cursor\plans\conversation_handoff_prompt.md_4122d518.plan.md`
-- Download copy: `C:\Users\VLAD\Downloads\PROMPT-TODO-handoff-plan.md`
-- Git remote: [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
-- Prior kit locations: `C:\Users\VLAD\agent-handoff`; SharePoint **AI vibecoding** (superseded by this repo per D6)
-- Examples: `C:\Users\VLAD\HOME\CODE\team-me\asset-ontology\PROMPT.md`, `em-testbench/prompt.md`
-- Project rule: [.cursor/rules/agent-handoff-bootstrap.mdc](.cursor/rules/agent-handoff-bootstrap.mdc)
-- Automation prefill: [automations/export-handoff-prefill.json](automations/export-handoff-prefill.json)
+- Kits: [kits/](kits/)
+- Templates: [kits/templates/](kits/templates/)
 
-## 8. Anti-goals / out of scope
+## 8. Anti-goals
 
-- Application/runtime code for handoff (files + automation only).
-- Editing the Cursor plan artifact.
-- Full chat archival or per-message log rows.
-- Renaming legacy `prompt.md` in other repos until those repos are actively touched.
+- Monolithic handoff automation prefills in this repo.
+- Invented pipeline on target repos during `kit_todo`.
 
-## 9. Conversation log (append-only, tagged)
+## 9. Conversation log
 
 | Date | Topics | Session | Summary | Refs |
 |------|--------|---------|---------|------|
-| 2026-06-02 | `agent-handoff`, `automation`, `planning` | `plan-prompt-todo` | Adopted PROMPT.md + TODO.md split, topic/session log tags, severity/time on TODO; exported plan to Downloads. | D1–D4 |
-| 2026-06-02 | `agent-handoff`, `implementation` | `implement-plan` | Scaffolded `agent-handoff` repo, templates, bootstrap rule, automation prefill, first handoff export. | TODO#plan-1–plan-4 |
-| 2026-06-02 | `agent-handoff`, `migration` | `move-to-ai-vibecoding` | Moved full handoff kit from `agent-handoff` workspace into Team-ProGrammar AI vibecoding folder; D5 canonical home. | D5 |
-| 2026-06-02 | `ai-promptkit`, `git`, `repo-placement` | `canonical-git-home` | Canonical home moved to git repo `m4rt1n3k/ai-promptkit`; PROMPT §5 and docs updated for local clone path and `main` branch. | D6, TODO#plan-8 |
+| 2026-06-02 | `kit-workers`, `simplify` | `minimal-ide-invoke` | IDE-only invoke; stripped dispatcher, cold-start, automations. | D1 |
+| 2026-06-02 | `kit_design` | `add-design-kit` | Added `kit_design` worker + template rule. | D2, TODO#kit-design-refine |
+| 2026-06-02 | `handoff`, `ai-promptkit` | `kit-handoff-self` | User ran `kit_handoff` on this repo; PROMPT/TODO refreshed from session. | — |

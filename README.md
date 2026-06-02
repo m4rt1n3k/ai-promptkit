@@ -1,34 +1,44 @@
-# ai-promptkit — agent handoff
+# ai-promptkit
 
-Git repo for Team-ProGrammar **conversation handoff** and vibecoding practices. Canonical kit: repo-root [`PROMPT.md`](./PROMPT.md) + [`TODO.md`](./TODO.md).
+Kit workers for **other** project workspaces. Outputs are written to the project you have open—not into this repo.
 
-- **Remote:** [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
-- **Local clone:** `C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit`
+**Clone:** `C:\Users\VLAD\HOME\CODE_m4rt1n3k\ai-promptkit` · [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
 
-Evolved from standalone `C:\Users\VLAD\agent-handoff` and a SharePoint **AI vibecoding** folder (2026-06-02). Full specification: [`PROMPT-TODO-handoff-plan.md`](./PROMPT-TODO-handoff-plan.md).
-
-## Quick start (new agent)
+## Invoke (Agent chat in your project)
 
 ```text
-Read PROMPT.md, then TODO.md; confirm PROMPT §5 Current state matches this repo; work only the Active track in TODO unless I say otherwise.
+from workspace ai-promptkit run kit_prompt
 ```
 
-## Copy into another project
+```text
+from workspace ai-promptkit run kit_todo
+```
 
-1. Copy `PROMPT.md`, `TODO.md`, and `.cursor/rules/agent-handoff-bootstrap.mdc` to that repo’s root (adjust §0 Meta purpose).
-2. Import or recreate the automation from [`automations/export-handoff-prefill.json`](./automations/export-handoff-prefill.json).
-3. Say **handoff** or **export PROMPT** before switching models; optional trigger body: `session: my-label` and `topics: tag1, tag2`.
+```text
+from workspace ai-promptkit run kit_handoff
+```
 
-## Automation
+```text
+from workspace ai-promptkit run kit_design
+```
 
-See [`automations/README.md`](./automations/README.md). Open the prefill in Cursor Automations (Glass), save, then use the webhook URL or manual run with handoff notes in the prompt.
+The agent reads `kits/<name>.md` from ai-promptkit and updates files at **your workspace root**.
 
-## Files
+Optional lines in the same message:
 
-| File | Role |
-|------|------|
-| `PROMPT.md` | Mission, constraints, decisions, state, next actions, tagged log |
-| `TODO.md` | Plans, mind-branches, severity, time priority |
-| `PROMPT-TODO-handoff-plan.md` | Complete plan/spec (reference) |
-| `.cursor/rules/agent-handoff-bootstrap.mdc` | Tells agents to read both files first |
-| `docs/COLD-START-VERIFY.md` | Cold-start agent checklist |
+```text
+session: my-label
+topics: tag-one, tag-two
+notes: what changed in this chat
+```
+
+## Kits
+
+| Command | File | Writes |
+|---------|------|--------|
+| `kit_prompt` | [kits/kit_prompt.md](kits/kit_prompt.md) | `PROMPT.md` |
+| `kit_todo` | [kits/kit_todo.md](kits/kit_todo.md) | `TODO.md` |
+| `kit_handoff` | [kits/kit_handoff.md](kits/kit_handoff.md) | both |
+| `kit_design` | [kits/kit_design.md](kits/kit_design.md) | `.cursor/rules/kit-design.mdc` |
+
+Templates: [kits/templates/](kits/templates/).

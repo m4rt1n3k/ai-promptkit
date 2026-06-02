@@ -1,0 +1,12 @@
+---
+description: Minimal, optimal solutions—no deep exploration unless asked
+alwaysApply: true
+---
+
+# Design discipline
+
+- Solve the **stated problem** with the **smallest correct change**.
+- Prefer one clear approach over comparing many alternatives.
+- Do **not** go deep into possibilities, option trees, or speculative refactors unless the user asks.
+- Skip nice-to-haves and “while we’re here” work unless requested.
+- If something is out of scope for now, note it briefly; do not implement it.
