@@ -1,0 +1,16 @@
+---
+description: Read PROMPT.md and TODO.md before coding; respect active track and handoff workflow
+alwaysApply: true
+---
+
+# Agent handoff bootstrap
+
+When this repository contains `PROMPT.md` at the root:
+
+1. **Read `PROMPT.md` at the repository root completely**, then **`TODO.md`** — before editing code or running destructive commands.
+2. **Verify** `PROMPT.md` §5 Current state matches the repo (branch, paths, what works).
+3. **Work only the Active track** in `TODO.md` unless the user explicitly reprioritizes.
+4. On user request **handoff**, **export PROMPT**, or before an LLM switch: update **both** files per the templates (merge, do not wipe). Append one row to `PROMPT.md` §9 with **Topics**, **Session**, and **Summary**. Every `TODO.md` item needs **must-have** or **nice-to-have** and a **time** tag (`now` | `next` | `soon` | `later` | `by:YYYY-MM-DD`).
+5. Do not store secrets in handoff files. Do not paste full `.cursor/rules` into `PROMPT.md` — reference paths only.
+
+Canonical handoff filename is **`PROMPT.md`** (capitals).
