@@ -23,13 +23,16 @@ alwaysApply: true
 - Do **not** go deep into possibilities, option trees, or speculative refactors unless the user asks.
 - Skip nice-to-haves and “while we’re here” work unless requested.
 - If something is out of scope for now, note it briefly; do not implement it.
+- Do **not** repeat the same fact in two places (e.g. a table row plus a heading or caption that restates interval, author, or title). Say it once in the most structured spot.
 ```
 
 Merge with existing rule if present; do not remove project-specific lines.
 
+Template: [templates/kit-design.rule.mdc](./templates/kit-design.rule.mdc).
+
 ## Do not
 
-- Update `PROMPT.md` or `TODO.md` (use other kits).
+- Update `PROMPT.md`, `TODO.md`, or `MANUAL.md` (use other kits).
 - Invent backlog items on the target repo.
 
 ## Reply

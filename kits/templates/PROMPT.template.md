@@ -6,7 +6,7 @@
 - Audience: coding agent / reviewer
 - Last updated: YYYY-MM-DD
 - Active track: (TODO plan-id or `_none_`)
-- Companion: [TODO.md](./TODO.md)
+- Companion: [TODO.md](./TODO.md) · [MANUAL.md](./MANUAL.md) (human workflows)
 - Repo: (name + remote URL if git)
 
 ## 1. Mission
@@ -48,7 +48,10 @@ What we are building or fixing; definition of done.
 
 - …
 
-## 9. Conversation log (append-only, tagged)
+## 9. Conversation log (append-only)
 
-| Date | Topics | Session | Summary | Refs |
-|------|--------|---------|---------|------|
+Append-only log in **one table**; **newest row first**. Each row = one kit conversation. Times are **local wall clock** (no `±HH:MM` in cells). **Interval:** `YYYY-MM-DD HH:MM:SS` with **seconds** when known — start then end on two lines in the cell (`<br/>`), or `start/end` on one line. No chat quotes under the table. Columns: **Interval**, **Topics**, **Author** (`Name [human]` and `Agent [ai]` on two lines), **Summary**, **Refs**.
+
+| Interval | Topics | Author | Summary | Refs |
+|----------|--------|--------|---------|------|
+| YYYY-MM-DD HH:MM:SS<br/>YYYY-MM-DD HH:MM:SS | `topic-one` | Jane Doe [human]<br/>Cursor Agent(Composer) [ai] | One-line agent summary | — |

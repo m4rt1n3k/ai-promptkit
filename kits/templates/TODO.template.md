@@ -3,7 +3,7 @@
 ## 0. Meta
 
 - Last updated: YYYY-MM-DD
-- Context: [PROMPT.md](./PROMPT.md)
+- Context: [PROMPT.md](./PROMPT.md) · [MANUAL.md](./MANUAL.md)
 - Legend: see below
 
 ## Legend
@@ -62,5 +62,5 @@
 
 ## Session index
 
-| Session label | Date | TODO IDs touched | PROMPT log row |
+| Session label | Date | TODO IDs touched | PROMPT §9 Interval |
 |---------------|------|------------------|----------------|

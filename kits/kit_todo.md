@@ -22,11 +22,11 @@ Create or **merge** `TODO.md` at the target repo root.
 - Keep Legend (severity, time, status) if missing.
 - **Active track:** one row or `_none_` if the user gave no task.
 - Move items to Done only if the user said they are finished in this chat.
-- Align topics with `PROMPT.md` §9 if you also run `kit_handoff`.
+- Align topics with the newest `PROMPT.md` §9 row (`Interval`, `Author`) if you also run `kit_handoff`.
 
 ## Do not
 
-Update `PROMPT.md` (use `kit_prompt` or `kit_handoff`).
+Update `PROMPT.md` (use `kit_prompt` or `kit_handoff`) or `MANUAL.md` (use `kit_manual` or `kit_handoff`).
 
 ## Reply
 
