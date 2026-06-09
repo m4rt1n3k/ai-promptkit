@@ -1,22 +1,7 @@
-# Architecture Decision Records
+# ADR index
 
-| ID | Title | Status | Date |
-|----|-------|--------|------|
-| [0001](0001-prompts-over-kits.md) | Prompts library over kit workers | accepted | 2026-06-09 |
+| ID | Title | Status |
+|----|-------|--------|
+| [0001](0001-prompts-over-kits.md) | Prompts library over kit workers | accepted |
 
-## Template
-
-```markdown
-# ADR-NNNN: Title
-
-- Status: proposed | accepted | deprecated
-- Date: YYYY-MM-DD
-
-## Context
-
-## Decision
-
-## Alternatives considered
-
-## Consequences
-```
+Template: Status, Date, Context, Decision, Consequences.

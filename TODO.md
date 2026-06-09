@@ -1,32 +1,22 @@
-# TODO.md — ai-promptkit
+# TODO
 
-## Legend
+**Severity:** must-have | nice-to-have · **Status:** planned | in-progress | done
 
-**Severity:** must-have | nice-to-have · **Time:** now | next | soon | later · **Status:** planned | in-progress | done
+## Active
 
----
-
-## Active track
-
-| ID | Title | Severity | Time | Status | Notes |
-|----|-------|----------|------|--------|-------|
-| *none* | — | — | — | — | |
-
----
+| ID | Title | Status |
+|----|-------|--------|
+| *none* | — | — |
 
 ## Pipeline
 
-| ID | Title | Severity | Time | Status | Notes |
-|----|-------|----------|------|--------|-------|
-| consumer-rollout | Bootstrap consumer repos (pvf-corrector, asset-ontology, em-testbench) | nice-to-have | next | planned | Run bootstrap prompt per repo |
-| sync-script | Optional `tools/sync_prompts.sh` for copy-from-submodule | nice-to-have | later | planned | Manual cp works for now |
-
----
+| ID | Title | Status | Notes |
+|----|-------|--------|-------|
+| consumer-rollout | init on consumer repos | planned | pvf-corrector, asset-ontology, em-testbench |
 
 ## Done
 
-| ID | Title | Closed | Outcome |
-|----|-------|--------|---------|
-| rebuild-prompts | Rebuild around flat prompts/ | 2026-06-09 | Removed kits/; docs/ + submodule model; ADR-0001 |
-| simplify-kits | Kit workers + IDE invoke | 2026-06-02 | Superseded by prompts layout |
-| canonical-git | Git home m4rt1n3k/ai-promptkit | 2026-06-02 | — |
+| ID | Title | Closed |
+|----|-------|--------|
+| simplify | Minimal prompts + init workflow | 2026-06-09 |
+| rebuild | prompts/ over kits/ | 2026-06-09 |

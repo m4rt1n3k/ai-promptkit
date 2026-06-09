@@ -1,49 +1,34 @@
-# Conventions — agent governance
+# Conventions
 
-Rules for agents working on repos that use ai-promptkit.
+Agent rules for repos using ai-promptkit.
 
-## Documentation layers
+## Files
 
-| Layer | File | Job |
-|-------|------|-----|
-| Map | `README.md` | Structure, links, who reads what |
-| Manual | `docs/manual.md` | Human workflows and procedures |
-| Conventions | `docs/conventions.md` | Agent rules (this file) |
-| Devlog | `docs/devlog.md` | Session outcomes table (append-only) |
-| ADR | `docs/adr/` | Irreversible architectural choices |
-| Prompts | `prompts/` | Invocable AI task bodies |
+**Consumer** (after [init.md](../prompts/init.md)):
 
-Do not store chat logs in conventions. Session narrative goes in devlog only.
+| File | Job |
+|------|-----|
+| `subs/ai-promptkit/prompts/` | Base prompts (read-only) |
+| `prompts/handoff.md` | Extends base — daily invoke |
+| `prompts/` | Other project prompts |
+| `docs/{manual,conventions,devlog,adr}/` | Project docs |
 
-## Handoff rules
+**Upstream (ai-promptkit itself):** same `docs/` + `prompts/` paths, but no `subs/`; `prompts/handoff.md` is the base (not a wrapper).
 
-1. **Devlog** — prepend one row; outcomes only; local ISO times with seconds; no quotes below table.
-2. **TODO** — only tasks the user stated in the session; do not invent pipeline items.
-3. **No secrets** in docs, devlog, or TODO.
-4. **Do not commit** unless the user explicitly asks.
-5. **Regenerate docs** only when layout, workflows, CLI, or prompt registry changed.
+## Handoff
+
+1. Daily invoke: `prompts/handoff.md` (extends base steps 1–5).
+2. Devlog: prepend one row; outcomes only; no chat quotes below table.
+3. TODO: user-stated tasks only — do not invent backlog.
+4. No secrets in docs. Do not commit unless asked.
+
+## Prompts
+
+- Contract: title → `---` → task body; cwd = repo root.
+- Onboarding: run `subs/ai-promptkit/prompts/init.md` once after submodule add.
+- Do not edit `subs/ai-promptkit/`. Fork single files into `prompts/` only when needed.
+- Resolve paths: `prompts/<file>` first, else `subs/ai-promptkit/prompts/<file>`.
 
 ## Design discipline
 
-Prefer minimal correct changes. Do not explore many alternatives unless asked. See `templates/design.rule.mdc` for the Cursor rule text.
-
-## Prompt file contract
-
-Every prompt file:
-
-1. Human-readable title and when-to-use (above `---`)
-2. `---`
-3. Copy-paste task body with explicit cwd = repo root
-
-## Submodule policy
-
-- ai-promptkit submodule is **read-only** in consumer repos.
-- Customize `prompts/handoff.md` on the consumer after copy; propose upstream changes for shared prompts.
-- Sync `prompts/` after submodule updates.
-
-## Anti-goals
-
-- Monolithic `PROMPT.md` with embedded chat history
-- In-repo kit dispatchers or JSON orchestration state
-- Invented backlog during handoff
-- Heavy doc frameworks (MkDocs, etc.) without explicit request
+Minimal correct changes. Template: `subs/ai-promptkit/templates/design.rule.mdc` → `.cursor/rules/design-discipline.mdc`.

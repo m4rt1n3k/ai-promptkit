@@ -1,97 +1,88 @@
-# Manual — ai-promptkit
+# Manual
 
-Human guide for using this repo as a **shared prompt library** across projects.
+## Onboarding (once per project)
 
-## 1. What this repo is
+| Step | Action |
+|------|--------|
+| 1 | Add submodule (terminal) |
+| 2 | Run `init.md` (agent) |
+| 3 | Use `prompts/handoff.md` (created by init) |
 
-ai-promptkit ships **portable prompts** in `prompts/` and a **handoff orchestrator** (`prompts/handoff.md`). Consumer projects add it as a git submodule and bootstrap a `docs/` + `prompts/` layout on their own repo.
-
-This repo does **not** run a dispatcher or CI orchestration — you paste prompts into Cursor Agent or point the agent at submodule paths.
-
-## 2. Submodule setup
-
-In a consumer project:
+### Step 1 — Submodule
 
 ```bash
-git submodule add https://github.com/m4rt1n3k/ai-promptkit vendor/ai-promptkit
+mkdir -p subs
+git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git subs/ai-promptkit
 git submodule update --init --recursive
-cp -r vendor/ai-promptkit/prompts .
 ```
 
-First-time consumer repo: run the bootstrap prompt (see §4.1).
-
-## 3. Working cycle
-
-### Pass 1 — Development
-
-| Step | Read / do |
-|------|-----------|
-| Orient | README · `docs/conventions.md` · `TODO.md` |
-| Develop | Code with Cursor Agent |
-| Handoff | `prompts/handoff.md` (or invoke via submodule) |
-| Commit | When ready (handoff drafts message only) |
-
-### Pass 2 — Usage / ops
-
-| Step | Read / do |
-|------|-----------|
-| Orient | README · `docs/manual.md` |
-| Operate | Follow procedures; no handoff unless docs change |
-
-## 4. Core workflows
-
-### 4.1 Bootstrap a new consumer repo
-
-1. Add submodule (§2).
-2. In Agent chat on the **consumer** repo:
-   ```text
-   Read vendor/ai-promptkit/prompts/bootstrap-docs-prompts-layout.md and run it on this workspace.
-   ```
-3. Review scaffolded `docs/` and `prompts/`.
-4. Run handoff after first real session.
-
-### 4.2 End-of-session handoff
-
-1. Open the **consumer** project in Cursor.
-2. Agent chat:
-   ```text
-   Run prompts/handoff.md — end of session handoff.
-   ```
-   Or without local copy:
-   ```text
-   Read vendor/ai-promptkit/prompts/handoff.md and execute on this workspace.
-   ```
-3. Review `docs/devlog.md`, `TODO.md`, and any doc diffs.
-4. Commit when ready.
-
-### 4.3 Install design discipline
-
-Once per consumer repo:
+### Step 2 — Init
 
 ```text
-Read vendor/ai-promptkit/prompts/install-design-rule.md and run on this workspace.
+Read subs/ai-promptkit/prompts/init.md and run on this workspace.
 ```
 
-Creates `.cursor/rules/design-discipline.mdc`.
+Creates `docs/`, `prompts/README.md`, and **`prompts/handoff.md`** (extends base handoff). Empty repo → scaffold. Existing repo → **asks before reorganizing**.
 
-### 4.4 Maintain ai-promptkit itself
+### Step 3 — Handoff
 
-1. Open **this** repo in Cursor.
-2. Edit `prompts/*.md` or templates.
-3. Run `prompts/handoff.md` on this workspace.
-4. Consumer repos pull submodule + re-copy `prompts/` when they want updates.
+```text
+Run prompts/handoff.md — end of session handoff.
+```
 
-## 5. Troubleshooting
+Add project steps later under **Project steps** in `prompts/handoff.md`.
+
+## Layout
+
+```text
+<project>/
+├── subs/ai-promptkit/       # base prompts — do not edit
+├── prompts/
+│   ├── handoff.md           # extend base (required after init)
+│   ├── <name>.md            # local prompt
+│   └── <domain>/<name>.md   # grouped prompts (only if many related)
+├── docs/
+└── TODO.md
+```
+
+Base prompts stay in the submodule. Project prompts stay in `prompts/`.
+
+This matches [init.md](../prompts/init.md) target layout.
+
+### Upstream vs consumer
+
+| | Consumer project | ai-promptkit (this repo) |
+|--|------------------|--------------------------|
+| `subs/ai-promptkit/` | yes | no — this **is** the kit |
+| `prompts/handoff.md` | extends base (from template) | **is** the base handoff |
+| `prompts/README.md` | project registry | base prompt catalog |
+| `templates/`, `tools/` | in submodule only | yes, ships here |
+
+## Invoke phrases
+
+| Task | Phrase |
+|------|--------|
+| Init | `Read subs/ai-promptkit/prompts/init.md and run on this workspace.` |
+| Handoff | `Run prompts/handoff.md — end of session handoff.` |
+| Design rule | `Read subs/ai-promptkit/prompts/install-design-rule.md and run on this workspace.` |
+| Base handoff only | `Read subs/ai-promptkit/prompts/handoff.md and execute on this workspace.` |
+
+## Submodule update
+
+```bash
+git submodule update --remote subs/ai-promptkit
+```
+
+## Troubleshooting
 
 | Symptom | Fix |
 |---------|-----|
-| Handoff writes to ai-promptkit instead of my app | Open the app repo; re-run with explicit "this workspace" |
-| TODO filled with invented tasks | Restate tasks in chat; handoff step 5 only closes/states user-mentioned work |
-| Missing `docs/devlog.md` | Run bootstrap prompt once |
-| Stale prompts | `git submodule update` + re-copy `prompts/` |
+| No `prompts/handoff.md` | Run init |
+| Handoff targets wrong repo | Open consumer project; say "this workspace" |
+| Submodule empty | `git submodule update --init subs/ai-promptkit` |
 
-## 6. References
+## References
 
-- [prompts/invoke.md](../prompts/invoke.md) — invoke phrases
-- [prompts/README.md](../prompts/README.md) — prompt registry
-- [conventions.md](conventions.md) — agent rules
+- [prompts/init.md](../prompts/init.md)
+- [prompts/README.md](../prompts/README.md)
+- [conventions.md](conventions.md)

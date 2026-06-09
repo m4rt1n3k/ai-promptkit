@@ -14,7 +14,7 @@ OUTPUT = WIKI_DIR / "from-code.md"
 
 # Directories to scan (edit per repo)
 SCAN_DIRS = ("src", "lib", "tools")
-SKIP_DIRS = {"__pycache__", "node_modules", ".git", "vendor"}
+SKIP_DIRS = {"__pycache__", "node_modules", ".git", "subs", "vendor"}
 
 
 def iter_py_files() -> list[Path]:

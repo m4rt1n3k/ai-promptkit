@@ -1,27 +1,17 @@
-# TODO.md
+# TODO
 
-## Legend
+## Active
 
-**Severity:** must-have | nice-to-have · **Time:** now | next | soon | later · **Status:** planned | in-progress | done
-
----
-
-## Active track
-
-| ID | Title | Severity | Time | Status | Notes |
-|----|-------|----------|------|--------|-------|
-| *none* | — | — | — | — | |
-
----
+| ID | Title | Status |
+|----|-------|--------|
+| *none* | — | — |
 
 ## Pipeline
 
-| ID | Title | Severity | Time | Status | Notes |
-|----|-------|----------|------|--------|-------|
-
----
+| ID | Title | Status |
+|----|-------|--------|
 
 ## Done
 
-| ID | Title | Closed | Outcome |
-|----|-------|--------|---------|
+| ID | Title | Closed |
+|----|-------|--------|
