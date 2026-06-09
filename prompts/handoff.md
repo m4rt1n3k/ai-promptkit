@@ -4,7 +4,7 @@ Base steps 1–5. Consumers use `prompts/handoff.md` (extends this) after [init.
 
 | Step | Prompt | Output |
 |------|--------|--------|
-| 1 | [session-summary.md](session-summary.md) | Commit draft |
+| 1 | [session-summary.md](session-summary.md) | Commit draft + Teams paragraph |
 | 2 | [update-devlog.md](update-devlog.md) | Devlog row |
 | 3 | [regenerate-docs.md](regenerate-docs.md) | Docs if structure changed |
 | 4 | [suggest-adr.md](suggest-adr.md) | ADR if needed |
