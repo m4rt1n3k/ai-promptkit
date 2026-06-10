@@ -4,34 +4,39 @@ Step 1 of [handoff.md](handoff.md). Copy below the line.
 
 ---
 
-## Task: Draft commit message and Teams note
+## Task: Draft commit message
 
 Target repository (cwd = repo root). **Do not commit** unless asked.
 
+Use **`topic - detail`** phrasing, not full sentences.
+
+| Avoid | Prefer |
+|-------|--------|
+| Split AO Configurator into API/Python branches and centralize docs | configurator - API/Python branches, centralize docs |
+| Add init onboarding and simplify handoff prompts | promptkit - init onboarding, slim handoff |
+
+**Topic** = area or component (lowercase, 1–2 words). **Detail** = comma-separated phrases, no verbs needed.
+
 ### Output
 
-**1. Commit message**
+Print **two separate fenced blocks** so the user can copy each independently.
+
+**Subject** — one line only, no `Subject:` prefix:
 
 ```text
-Subject: <2–5 words, imperative>
-
-- <what/why bullet>
-- <optional second bullet>
+<topic - detail>
 ```
 
-Subject = essence only (e.g. `Add init onboarding`, `Simplify handoff prompts`). No file lists.
+**Body** — bullet lines, same pattern:
 
-**2. Teams paragraph**
+```text
+- <topic - detail>
+- <optional topic - detail>
+```
 
-One short paragraph for colleagues (plain language, no jargon dumps). Cover:
-
-- **What improved** — outcome for the team, not implementation detail
-- **Why it matters** — easier, faster, more consistent, etc.
-- **What to do** — only if there is a clear next step (e.g. run init, pull submodule)
-
-Tone: helpful update, not a changelog. Skip Teams paragraph if session was trivial or internal-only.
+No file lists. If nothing committable, say so.
 
 ### Rules
 
+- No sentence-style subject or bullets.
 - Focus on intent and outcome, not a file manifest.
-- If nothing committable, say so.
