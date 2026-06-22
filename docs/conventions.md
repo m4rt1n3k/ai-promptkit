@@ -17,10 +17,11 @@ Agent rules for repos using ai-promptkit.
 
 ## Handoff
 
-1. Daily invoke: `prompts/handoff.md` (extends base steps 1–5).
+1. Daily invoke: `prompts/handoff.md` (extends base steps 1–5, including 3b for Python).
 2. Devlog: prepend one row; outcomes only; no chat quotes below table.
 3. TODO: user-stated tasks only — do not invent backlog.
 4. No secrets in docs. Do not commit unless asked.
+5. `pyproject.toml`: consumer Python projects only — [sync-pyproject.md](../prompts/sync-pyproject.md). Not used in ai-promptkit upstream.
 
 ## Prompts
 

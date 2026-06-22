@@ -10,11 +10,11 @@ Extends `subs/ai-promptkit/prompts/handoff.md`. Invoke: `Run prompts/handoff.md 
 
 ### Steps 1–5 — Base
 
-Follow `subs/ai-promptkit/prompts/handoff.md` steps 1–5 in order.
+Follow `subs/ai-promptkit/prompts/handoff.md` steps 1–5 in order (step 3b syncs `pyproject.toml` when the Python project changed).
 
 ### Project steps
 
-*Add project-specific steps here when needed.*
+*Add project-specific steps here when needed. Example: extra validation, deploy checklist, domain-specific doc refresh.*
 
 ### Constraints
 

@@ -35,10 +35,11 @@ Consumer project (cwd = repo root). Goal: `prompts/handoff.md` works; docs scaff
 │   ├── devlog.md
 │   └── adr/README.md
 ├── TODO.md
-└── README.md
+├── README.md
+└── pyproject.toml           # Python projects only — see sync-pyproject.md
 ```
 
-**Not** part of consumer layout: `templates/`, `tools/` (stay in submodule unless copied).
+**Not** part of consumer layout: `templates/`, `tools/` (stay in submodule unless copied). **Not** in ai-promptkit upstream (this kit repo stays prompts-only).
 
 ### 1. Verify submodule
 
@@ -82,7 +83,11 @@ From `subs/ai-promptkit/templates/handoff-extend.md` if missing or not delegatin
 
 Daily invoke: `Run prompts/handoff.md — end of session handoff.`
 
-### 5. README
+### 5. Python — pyproject.toml
+
+If the consumer repo uses Python (`.py` files, `requirements*.txt`, or planned package layout): follow [sync-pyproject.md](sync-pyproject.md) to create or refresh `pyproject.toml`. Skip for non-Python repos.
+
+### 6. README
 
 Add submodule path + handoff invoke phrase to project `README.md`.
 
@@ -98,5 +103,6 @@ Offer design rule (`install-design-rule.md`) only if user agrees.
 
 1. State (empty/partial/legacy/initialized)
 2. Created / migrated / skipped (vs target layout)
-3. Handoff invoke phrase
-4. Commit message draft if changed
+3. `pyproject.toml` — created / updated / skipped (Python only)
+4. Handoff invoke phrase
+5. Commit message draft if changed

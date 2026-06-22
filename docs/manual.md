@@ -32,6 +32,10 @@ Run prompts/handoff.md — end of session handoff.
 
 Add project steps later under **Project steps** in `prompts/handoff.md`.
 
+### Python projects
+
+After init, consumer repos with Python code get `pyproject.toml` via init step 5 / handoff step 3b ([sync-pyproject.md](../prompts/sync-pyproject.md)). The ai-promptkit kit repo itself does not ship one.
+
 ## Layout
 
 ```text
@@ -64,6 +68,7 @@ This matches [init.md](../prompts/init.md) target layout.
 |------|--------|
 | Init | `Read subs/ai-promptkit/prompts/init.md and run on this workspace.` |
 | Handoff | `Run prompts/handoff.md — end of session handoff.` |
+| Sync pyproject | `Read subs/ai-promptkit/prompts/sync-pyproject.md and run on this workspace.` |
 | Design rule | `Read subs/ai-promptkit/prompts/install-design-rule.md and run on this workspace.` |
 | Base handoff only | `Read subs/ai-promptkit/prompts/handoff.md and execute on this workspace.` |
 
