@@ -95,8 +95,10 @@ This matches [init.md](../prompts/init.md) target layout.
 
 ## Submodule update
 
+Pull latest base prompts from the remote tracking branch (`main`). Initializes the submodule if missing; use from the consumer repo root:
+
 ```bash
-git submodule update --remote subs/ai-promptkit
+git submodule update --init --recursive --remote
 ```
 
 ## Troubleshooting
@@ -105,7 +107,7 @@ git submodule update --remote subs/ai-promptkit
 |---------|-----|
 | No `prompts/handoff.md` | Run init |
 | Handoff targets wrong repo | Open consumer project; say "this workspace" |
-| Submodule empty | `git submodule update --init subs/ai-promptkit` |
+| Submodule empty | `git submodule update --init --recursive --remote` |
 
 ## References
 

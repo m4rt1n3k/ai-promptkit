@@ -18,4 +18,4 @@ Legacy `kits/*.md` + root `PROMPT.md`/`MANUAL.md` did not submodule cleanly.
 ## Consequences
 
 - No kit dispatcher. Paste prompts or read file paths in Agent chat.
-- `git submodule update` for base prompt changes; edit project prompts locally.
+- `git submodule update --init --recursive --remote` for base prompt changes; edit project prompts locally.
