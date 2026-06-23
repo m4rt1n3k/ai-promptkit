@@ -1,7 +1,7 @@
 # From code
 
 > Auto-generated. Do not edit by hand.
-> Regen: `python tools/build_wiki.py` — 2026-06-09 13:48 UTC
+> Regen: `python tools/build_wiki.py` — 2026-06-22 08:40 UTC
 
 ### `tools/build_wiki.py`
 

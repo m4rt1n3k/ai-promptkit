@@ -11,6 +11,8 @@ Base steps 1–5 (+ step 3b for Python `pyproject.toml`). Consumers use `prompts
 | 4 | [suggest-adr.md](suggest-adr.md) | ADR if needed |
 | 5 | (below) | TODO.md |
 
+Handoff **closes the current work chat** — devlog, TODO, and commit draft persist repo state so a **new chat** can run [takeover.md](takeover.md) cold-start on the same repo or a different area.
+
 ---
 
 ## Task: Session handoff
@@ -44,3 +46,9 @@ Update `TODO.md`: close done items; add tasks **only if user stated them**. Do n
 ### Constraints
 
 Read `git status`. Do not invent changes. Do not commit unless asked. Devlog is append-only.
+
+### Output
+
+Deliver handoff results in chat. End with:
+
+> Next session on this repo (especially a new area): start a **new chat** and run `takeover.md` before coding.

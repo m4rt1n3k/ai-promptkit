@@ -16,6 +16,8 @@ Follow `subs/ai-promptkit/prompts/handoff.md` steps 1–5 in order (step 3b sync
 
 *Add project-specific steps here when needed. Example: extra validation, deploy checklist, domain-specific doc refresh.*
 
+*Next chat on a new area: run `subs/ai-promptkit/prompts/takeover.md` before coding.*
+
 ### Constraints
 
 Same as base: read `git status`; do not invent changes; do not commit unless asked.

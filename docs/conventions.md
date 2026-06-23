@@ -23,6 +23,13 @@ Agent rules for repos using ai-promptkit.
 4. No secrets in docs. Do not commit unless asked.
 5. `pyproject.toml`: consumer Python projects only — [sync-pyproject.md](../prompts/sync-pyproject.md). Not used in ai-promptkit upstream.
 
+## Session rhythm
+
+1. **Handoff** — end of work session in the **current chat** ([handoff.md](../prompts/handoff.md)).
+2. **Takeover** — start of work session in a **new chat** ([takeover.md](../prompts/takeover.md)), especially before coding on human-written code or a new area of the repo.
+3. Takeover reads devlog/TODO/conventions first; it does not duplicate handoff (no commit summary, no devlog append).
+4. Takeover is read-only exploration until the user asks to implement; development continues in the same chat after the debrief.
+
 ## Prompts
 
 - Contract: title → `---` → task body; cwd = repo root.

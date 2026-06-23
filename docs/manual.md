@@ -36,6 +36,26 @@ Add project steps later under **Project steps** in `prompts/handoff.md`.
 
 After init, consumer repos with Python code get `pyproject.toml` via init step 5 / handoff step 3b ([sync-pyproject.md](../prompts/sync-pyproject.md)). The ai-promptkit kit repo itself does not ship one.
 
+## Session rhythm (handoff → takeover)
+
+| Phase | Chat | Action |
+|-------|------|--------|
+| End session | Current (work) chat | Run handoff — persist devlog, TODO, commit draft |
+| Start session | **New** chat | Run takeover — deep read, debrief, then code |
+
+1. **Work** in the current chat; at session end run handoff (consumer: `prompts/handoff.md`).
+2. **Next session** — especially on a different part of the codebase — open a **new chat** and run takeover before implementing.
+3. Takeover is read-only exploration; after the debrief, continue development in that same chat.
+4. Optional scope: append `Focus on <path or module>.` to the takeover invoke phrase.
+
+### Takeover invoke
+
+```text
+Read subs/ai-promptkit/prompts/takeover.md and run on this workspace.
+```
+
+First time on an existing app repo: run `init.md` once, then `takeover.md` in a new chat before feature work.
+
 ## Layout
 
 ```text
@@ -67,6 +87,7 @@ This matches [init.md](../prompts/init.md) target layout.
 | Task | Phrase |
 |------|--------|
 | Init | `Read subs/ai-promptkit/prompts/init.md and run on this workspace.` |
+| Takeover | `Read subs/ai-promptkit/prompts/takeover.md and run on this workspace.` |
 | Handoff | `Run prompts/handoff.md — end of session handoff.` |
 | Sync pyproject | `Read subs/ai-promptkit/prompts/sync-pyproject.md and run on this workspace.` |
 | Design rule | `Read subs/ai-promptkit/prompts/install-design-rule.md and run on this workspace.` |
@@ -89,5 +110,6 @@ git submodule update --remote subs/ai-promptkit
 ## References
 
 - [prompts/init.md](../prompts/init.md)
+- [prompts/takeover.md](../prompts/takeover.md)
 - [prompts/README.md](../prompts/README.md)
 - [conventions.md](conventions.md)

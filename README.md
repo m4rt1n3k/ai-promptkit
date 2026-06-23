@@ -27,6 +27,7 @@ Run prompts/handoff.md — end of session handoff.
 |-----|------|
 | Human | [docs/manual.md](docs/manual.md) |
 | Agent | [docs/conventions.md](docs/conventions.md) |
+| Devlog | [docs/devlog.md](docs/devlog.md) |
 | Prompts | [prompts/README.md](prompts/README.md) |
 
 ## Layouts

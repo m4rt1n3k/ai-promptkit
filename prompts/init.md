@@ -91,7 +91,7 @@ If the consumer repo uses Python (`.py` files, `requirements*.txt`, or planned p
 
 Add submodule path + handoff invoke phrase to project `README.md`.
 
-Offer design rule (`install-design-rule.md`) only if user agrees.
+Offer design rule (`install-design-rule.md`) only if user agrees. On existing app repos (not empty), offer [takeover.md](takeover.md) in a **new chat** before feature work.
 
 ### Constraints
 
