@@ -1,6 +1,6 @@
 # Handoff — end of session
 
-Base steps 1–5 (+ step 3b for Python `pyproject.toml`). Consumers use `prompts/handoff.md` (extends this) after [init.md](init.md).
+Base steps 1–5 (+ step 3b for Python `pyproject.toml`). Consumers use `prompts/handoff.md` (extends this) after [init.md](init.md). Daily: `Run prompts/handoff.md` (`run /prompts/handoff`).
 
 | Step | Prompt | Output |
 |------|--------|--------|
@@ -51,4 +51,4 @@ Read `git status`. Do not invent changes. Do not commit unless asked. Devlog is 
 
 Deliver handoff results in chat. End with:
 
-> Next session on this repo (especially a new area): start a **new chat** and run `takeover.md` before coding.
+> Next session on this repo (especially a new area): start a **new chat** and `Run prompts/takeover.md` (or `run /prompts/takeover`) before coding. On this kit repo (upstream): run [takeover.md](takeover.md) directly.

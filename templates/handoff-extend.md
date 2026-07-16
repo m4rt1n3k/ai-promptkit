@@ -1,6 +1,14 @@
 # Handoff — <project-name>
 
-Extends `subs/ai-promptkit/prompts/handoff.md`. Invoke: `Run prompts/handoff.md — end of session handoff.`
+Extends `extern/ai-promptkit/prompts/handoff.md`. Daily end-of-session routine.
+
+Invoke:
+
+```text
+Run prompts/handoff.md
+```
+
+Short form: `run /prompts/handoff`.
 
 ---
 
@@ -10,13 +18,13 @@ Extends `subs/ai-promptkit/prompts/handoff.md`. Invoke: `Run prompts/handoff.md 
 
 ### Steps 1–5 — Base
 
-Follow `subs/ai-promptkit/prompts/handoff.md` steps 1–5 in order (step 3b syncs `pyproject.toml` when the Python project changed).
+Follow `extern/ai-promptkit/prompts/handoff.md` steps 1–5 in order (step 3b syncs `pyproject.toml` when the Python project changed).
 
 ### Project steps
 
 *Add project-specific steps here when needed. Example: extra validation, deploy checklist, domain-specific doc refresh.*
 
-*Next chat on a new area: run `subs/ai-promptkit/prompts/takeover.md` before coding.*
+*Next chat / new area: `Run prompts/takeover.md` (or `run /prompts/takeover`) before coding.*
 
 ### Constraints
 

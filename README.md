@@ -1,25 +1,31 @@
 # ai-promptkit
 
-Base prompts + dev culture for consumer projects. Submodule at `subs/ai-promptkit`; project prompts in `prompts/`.
+Base prompts + dev culture for consumer projects. Submodule at `extern/ai-promptkit`; project prompts in `prompts/`.
 
 **Repo:** [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
 
 ## Setup (once)
 
 ```bash
-mkdir -p subs
-git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git subs/ai-promptkit
+mkdir -p extern
+git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git extern/ai-promptkit
 ```
 
 ```text
-Read subs/ai-promptkit/prompts/init.md and run on this workspace.
+Read extern/ai-promptkit/prompts/init.md and run on this workspace.
 ```
 
-## Daily
+## Daily (after init on a consumer project)
 
 ```text
-Run prompts/handoff.md — end of session handoff.
+Run prompts/takeover.md
 ```
+
+```text
+Run prompts/handoff.md
+```
+
+Short forms: `run /prompts/takeover` · `run /prompts/handoff`. Those project files extend the base prompts in this repo.
 
 ## Docs
 
@@ -36,8 +42,9 @@ Run prompts/handoff.md — end of session handoff.
 
 ```text
 <project>/
-├── subs/ai-promptkit/
-├── prompts/handoff.md    # extends base — created by init
+├── extern/ai-promptkit/
+├── prompts/handoff.md    # daily end — extends base (init)
+├── prompts/takeover.md   # daily start — extends base (init)
 ├── prompts/README.md
 └── docs/
 ```

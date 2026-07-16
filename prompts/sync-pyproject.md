@@ -6,12 +6,12 @@ Used by [init.md](init.md) (Python projects) and [handoff.md](handoff.md) step 3
 
 ## Task: Create or update pyproject.toml
 
-Target repository (cwd = repo root). Consumer project with `subs/ai-promptkit/` submodule.
+Target repository (cwd = repo root). Consumer project with `extern/ai-promptkit/` submodule.
 
 ### Skip when
 
-- **Not a Python project** — no `.py` files outside `subs/`, and no `requirements*.txt`, `setup.py`, `setup.cfg`, or existing `pyproject.toml`.
-- **ai-promptkit upstream** — this repo (has `templates/`, base `prompts/handoff.md`, no `subs/ai-promptkit/`). Upstream intentionally has no `pyproject.toml`.
+- **Not a Python project** — no `.py` files outside `extern/`, and no `requirements*.txt`, `setup.py`, `setup.cfg`, or existing `pyproject.toml`.
+- **ai-promptkit upstream** — this repo (has `templates/`, base `prompts/handoff.md`, no `extern/ai-promptkit/`). Upstream intentionally has no `pyproject.toml`.
 - Session did not touch Python deps, tooling, layout, or `pyproject.toml` (handoff only).
 
 ### Detect project shape
@@ -75,7 +75,7 @@ Do not remove user-added sections (hatch, poetry, uv settings) unless obsolete a
 
 ### Constraints
 
-- Consumer repo only — never write `pyproject.toml` under `subs/ai-promptkit/`.
+- Consumer repo only — never write `pyproject.toml` under `extern/ai-promptkit/`.
 - Minimal correct diff. No fake deps. No heavy packaging without need.
 - Do not commit unless asked.
 - Report: **created** | **updated** | **skipped** (with reason).

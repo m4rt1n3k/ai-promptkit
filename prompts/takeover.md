@@ -2,15 +2,27 @@
 
 Run at the **start of a new chat** before working on human- or externist-written code, or before taking on a **different area** of the repo. Pair with [handoff.md](handoff.md): handoff ends the previous session; takeover opens the next one.
 
-Overrides default shallow exploration — go deep, cite evidence, stay read-only until the user asks to implement.
-
-Invoke:
+**Consumers (after init):** use project wrappers — do not require the submodule path daily:
 
 ```text
-Read subs/ai-promptkit/prompts/takeover.md and run on this workspace.
+Run prompts/takeover.md
+```
+
+```text
+Run prompts/handoff.md
+```
+
+Short forms: `run /prompts/takeover` · `run /prompts/handoff`.
+
+**Base / upstream only** (this kit repo, or before init):
+
+```text
+Read extern/ai-promptkit/prompts/takeover.md and run on this workspace.
 ```
 
 Optional scope: append `Focus on <path or module>.`
+
+Overrides default shallow exploration — go deep, cite evidence, stay read-only until the user asks to implement.
 
 ---
 
@@ -22,9 +34,22 @@ Target repository (cwd = repo root). Goal: short debrief + serious findings + ne
 
 - **Fresh chat.** You do not have prior session context — read what the repo persisted.
 - **Explore deeply.** Read source, tests, config, and CI — not only README.
-- **Read-only** unless user explicitly asks to edit files.
+- **Read-only** for codebase exploration unless user explicitly asks to edit files (submodule refresh below is the exception).
 - **Evidence required.** Cite `path` or `path:line` for claims and findings.
 - **No invented backlog.** Do not add TODO items or ADRs unless user asks.
+
+### 0b. Refresh kit submodule (consumers)
+
+If this repo has `extern/ai-promptkit` (or `.gitmodules` entry for ai-promptkit), **before** reading kit prompts or exploring, run from the **consumer repo root**:
+
+```bash
+git submodule update --init --recursive --remote
+```
+
+- Initializes the submodule if missing; fetches latest on the tracked branch (`main`).
+- Report in the debrief: **updated** (new commit) | **already current** | **skipped** (no submodule — e.g. this is ai-promptkit upstream) | **failed** (paste error; continue with whatever is on disk).
+- Do **not** commit the bumped submodule pointer unless the user asks. Note in Open questions / Takeover plan if `git status` shows `extern/ai-promptkit` dirty after update.
+- Then continue using base prompts from the refreshed tree (wrappers still `prompts/takeover.md` / `prompts/handoff.md`).
 
 ### 1. Session context (from last handoff)
 
@@ -110,7 +135,7 @@ End with: **Ready for user task** — ask what to implement or wait for instruct
 
 #### Debrief (≤15 lines)
 
-What this codebase (or focused area) is, how it fits the project, and the 3 most important things to know before changing anything.
+What this codebase (or focused area) is, how it fits the project, and the 3 most important things to know before changing anything. First line: **Submodule:** updated | already current | skipped | failed.
 
 #### Critical flows
 

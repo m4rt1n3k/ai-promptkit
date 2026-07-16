@@ -6,31 +6,39 @@
 |------|--------|
 | 1 | Add submodule (terminal) |
 | 2 | Run `init.md` (agent) |
-| 3 | Use `prompts/handoff.md` (created by init) |
+| 3 | Use daily `prompts/handoff.md` + `prompts/takeover.md` (created by init) |
 
 ### Step 1 — Submodule
 
 ```bash
-mkdir -p subs
-git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git subs/ai-promptkit
+mkdir -p extern
+git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git extern/ai-promptkit
 git submodule update --init --recursive
 ```
 
 ### Step 2 — Init
 
 ```text
-Read subs/ai-promptkit/prompts/init.md and run on this workspace.
+Read extern/ai-promptkit/prompts/init.md and run on this workspace.
 ```
 
-Creates `docs/`, `prompts/README.md`, and **`prompts/handoff.md`** (extends base handoff). Empty repo → scaffold. Existing repo → **asks before reorganizing**.
+Creates `docs/`, `prompts/README.md`, and daily wrappers **`prompts/handoff.md`** + **`prompts/takeover.md`** (extend base prompts). Empty repo → scaffold. Existing repo → **asks before reorganizing**.
 
-### Step 3 — Handoff
+### Step 3 — Daily routines
+
+Start of a new chat (especially a new area):
 
 ```text
-Run prompts/handoff.md — end of session handoff.
+Run prompts/takeover.md
 ```
 
-Add project steps later under **Project steps** in `prompts/handoff.md`.
+End of session:
+
+```text
+Run prompts/handoff.md
+```
+
+Short forms: `run /prompts/takeover` · `run /prompts/handoff`. Add project-specific steps later under **Project steps** in each wrapper.
 
 ### Python projects
 
@@ -41,28 +49,33 @@ After init, consumer repos with Python code get `pyproject.toml` via init step 5
 | Phase | Chat | Action |
 |-------|------|--------|
 | End session | Current (work) chat | Run handoff — persist devlog, TODO, commit draft |
-| Start session | **New** chat | Run takeover — deep read, debrief, then code |
+| Start session | **New** chat | Run takeover — refresh `extern/ai-promptkit`, deep read, debrief, then code |
 
-1. **Work** in the current chat; at session end run handoff (consumer: `prompts/handoff.md`).
-2. **Next session** — especially on a different part of the codebase — open a **new chat** and run takeover before implementing.
-3. Takeover is read-only exploration; after the debrief, continue development in that same chat.
-4. Optional scope: append `Focus on <path or module>.` to the takeover invoke phrase.
+1. **Work** in the current chat; at session end: `Run prompts/handoff.md`.
+2. **Next session** — especially on a different part of the codebase — open a **new chat** and `Run prompts/takeover.md` before implementing (takeover runs `git submodule update --init --recursive --remote` first).
+3. Takeover is read-only exploration (except submodule refresh); after the debrief, continue development in that same chat.
+4. Optional scope: append `Focus on <path or module>.` to the takeover invoke.
 
-### Takeover invoke
+First time on an existing app repo: run `init.md` once, then `Run prompts/takeover.md` in a new chat before feature work.
 
-```text
-Read subs/ai-promptkit/prompts/takeover.md and run on this workspace.
+## Submodule update
+
+Normally done **inside takeover** (step 0b). Manual / troubleshooting from the consumer repo root:
+
+```bash
+git submodule update --init --recursive --remote
 ```
 
-First time on an existing app repo: run `init.md` once, then `takeover.md` in a new chat before feature work.
+Commit the new submodule pointer only when you want the team pin updated.
 
 ## Layout
 
 ```text
 <project>/
-├── subs/ai-promptkit/       # base prompts — do not edit
+├── extern/ai-promptkit/       # base prompts — do not edit
 ├── prompts/
-│   ├── handoff.md           # extend base (required after init)
+│   ├── handoff.md           # daily end — extends base (required)
+│   ├── takeover.md          # daily start — extends base (required)
 │   ├── <name>.md            # local prompt
 │   └── <domain>/<name>.md   # grouped prompts (only if many related)
 ├── docs/
@@ -77,8 +90,9 @@ This matches [init.md](../prompts/init.md) target layout.
 
 | | Consumer project | ai-promptkit (this repo) |
 |--|------------------|--------------------------|
-| `subs/ai-promptkit/` | yes | no — this **is** the kit |
+| `extern/ai-promptkit/` | yes | no — this **is** the kit |
 | `prompts/handoff.md` | extends base (from template) | **is** the base handoff |
+| `prompts/takeover.md` | extends base (from template) | **is** the base takeover |
 | `prompts/README.md` | project registry | base prompt catalog |
 | `templates/`, `tools/` | in submodule only | yes, ships here |
 
@@ -86,26 +100,19 @@ This matches [init.md](../prompts/init.md) target layout.
 
 | Task | Phrase |
 |------|--------|
-| Init | `Read subs/ai-promptkit/prompts/init.md and run on this workspace.` |
-| Takeover | `Read subs/ai-promptkit/prompts/takeover.md and run on this workspace.` |
-| Handoff | `Run prompts/handoff.md — end of session handoff.` |
-| Sync pyproject | `Read subs/ai-promptkit/prompts/sync-pyproject.md and run on this workspace.` |
-| Design rule | `Read subs/ai-promptkit/prompts/install-design-rule.md and run on this workspace.` |
-| Base handoff only | `Read subs/ai-promptkit/prompts/handoff.md and execute on this workspace.` |
-
-## Submodule update
-
-Pull latest base prompts from the remote tracking branch (`main`). Initializes the submodule if missing; use from the consumer repo root:
-
-```bash
-git submodule update --init --recursive --remote
-```
+| Init | `Read extern/ai-promptkit/prompts/init.md and run on this workspace.` |
+| Takeover (daily) | `Run prompts/takeover.md` (`run /prompts/takeover`) |
+| Handoff (daily) | `Run prompts/handoff.md` (`run /prompts/handoff`) |
+| Takeover (base only) | `Read extern/ai-promptkit/prompts/takeover.md and run on this workspace.` |
+| Sync pyproject | `Read extern/ai-promptkit/prompts/sync-pyproject.md and run on this workspace.` |
+| Design rule | `Read extern/ai-promptkit/prompts/install-design-rule.md and run on this workspace.` |
+| Base handoff only | `Read extern/ai-promptkit/prompts/handoff.md and execute on this workspace.` |
 
 ## Troubleshooting
 
 | Symptom | Fix |
 |---------|-----|
-| No `prompts/handoff.md` | Run init |
+| No `prompts/handoff.md` or `prompts/takeover.md` | Run init |
 | Handoff targets wrong repo | Open consumer project; say "this workspace" |
 | Submodule empty | `git submodule update --init --recursive --remote` |
 
