@@ -1,10 +1,11 @@
-# Docs
+# Documentation
 
-| File | For |
-|------|-----|
-| [manual.md](manual.md) | Humans — setup, session rhythm (handoff → takeover) |
-| [conventions.md](conventions.md) | Agents |
-| [devlog.md](devlog.md) | Session log |
-| [adr/](adr/README.md) | Decisions |
+| Document | Owns |
+|----------|------|
+| [devl-workflow.md](devl-workflow.md) | DEV|L evolution, grades and Spec Kit boundary |
+| [project-takeover.md](project-takeover.md) | New project setup and existing-codebase takeover |
+| [manual.md](manual.md) | Running one spiral turn |
+| [conventions.md](conventions.md) | Authority, evidence and artifact rules |
+| [adr/](adr/README.md) | Durable design decisions |
 
-Prompts: [../prompts/README.md](../prompts/README.md) · Start-of-session ramp-up: [../prompts/takeover.md](../prompts/takeover.md)
+Registries: [agents](../agents/README.md) · [prompts](../prompts/README.md) · [repository](../README.md)

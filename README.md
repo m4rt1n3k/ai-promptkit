@@ -1,62 +1,36 @@
 # ai-promptkit
 
-Base prompts + dev culture for consumer projects. Submodule at `extern/ai-promptkit`; project prompts in `prompts/`.
+Engineering-scientific extension for projects delivered strictly through GitHub Spec Kit.
 
-**Repo:** [github.com/m4rt1n3k/ai-promptkit](https://github.com/m4rt1n3k/ai-promptkit)
-
-## Setup (once)
-
-```bash
-mkdir -p extern
-git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git extern/ai-promptkit
-```
+**DEV|L — Develop–Delivery Spiral** evolves a real-world solution through three maturity grades:
 
 ```text
-Read extern/ai-promptkit/prompts/init.md and run on this workspace.
+Grade 1 · Engineer  → minimal working chain
+Grade 2 · Scientist → excellent, defensible core solution
+Grade 3 · Business  → scalable, market-ready ecosystem
+                              ↕
+human maturity judgment at every spiral turn
+                              ↓
+problem + environment + existing solutions + feasibility
+                              ↓
+native Spec Kit Delivery → real-world application → next turn
 ```
 
-## Daily (after init on a consumer project)
+The sequence expresses evolution, not automatic promotion. A grade may repeat or move backward when evidence demands it. The human judges maturity and selects the top-level agent for each turn.
+
+All persistent project context stays in native `.specify/` and `specs/` artifacts. ai-promptkit adds only three pre-spec perspectives and an append-only Spec Kit preset; it creates no parallel development logs, specifications, plans, tasks, session wrappers, or agent hierarchy.
+
+## Start
+
+- New project: follow [project takeover](docs/project-takeover.md).
+- Existing codebase without Spec Kit: add this repository at `extern/ai-promptkit`, then run `Read extern/ai-promptkit/prompts/takeover.md and incorporate Spec Kit into this workspace.`
+- Next feature: choose [Engineer, Scientist, or Business](agents/README.md), then invoke native `speckit.specify` with the prepared input.
+
+## Repository
 
 ```text
-Run prompts/takeover.md
+agents/      # three maturity-oriented pre-spec perspectives
+docs/        # workflow, project takeover, conventions, decisions
+prompts/     # one-time takeover and integration maintenance
+spec-kit/    # append-only DEV|L preset
 ```
-
-```text
-Run prompts/handoff.md
-```
-
-Short forms: `run /prompts/takeover` · `run /prompts/handoff`. Those project files extend the base prompts in this repo.
-
-## Docs
-
-| Who | Read |
-|-----|------|
-| Human | [docs/manual.md](docs/manual.md) |
-| Agent | [docs/conventions.md](docs/conventions.md) |
-| Devlog | [docs/devlog.md](docs/devlog.md) |
-| Prompts | [prompts/README.md](prompts/README.md) |
-
-## Layouts
-
-**Consumer** (after init) — see [init.md](prompts/init.md):
-
-```text
-<project>/
-├── extern/ai-promptkit/
-├── prompts/handoff.md    # daily end — extends base (init)
-├── prompts/takeover.md   # daily start — extends base (init)
-├── prompts/README.md
-└── docs/
-```
-
-**This repo (upstream)** — no submodule, no extending handoff:
-
-```text
-ai-promptkit/
-├── prompts/              # base prompts (handoff.md is the base, not a wrapper)
-├── docs/
-├── templates/            # seeds for init on consumer repos
-└── tools/
-```
-
-Upstream handoff: `Run prompts/handoff.md` calls base steps directly.

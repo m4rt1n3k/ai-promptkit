@@ -1,44 +1,41 @@
 # Conventions
 
-Agent rules for repos using ai-promptkit.
+## Authority
 
-## Files
+1. Human instruction, safety constraints and accepted decisions.
+2. Consumer repository instructions and accepted project decisions.
+3. Installed native Spec Kit command and template for the active Delivery step.
+4. ai-promptkit top-level agent or maintenance prompt.
 
-**Consumer** (after [init.md](../prompts/init.md)):
+## DEV|L
 
-| File | Job |
-|------|-----|
-| `extern/ai-promptkit/prompts/` | Base prompts (read-only) |
-| `prompts/handoff.md` | Extends base — daily end (`Run prompts/handoff.md`) |
-| `prompts/takeover.md` | Extends base — daily start (`Run prompts/takeover.md`) |
-| `prompts/` | Other project prompts |
-| `docs/{manual,conventions,devlog,adr}/` | Project docs |
+- Every spiral turn starts with human maturity judgment and agent selection.
+- Grade 1 evolves a minimal working chain; Grade 2 evolves an excellent core solution; Grade 3 evolves a scalable market-ready ecosystem.
+- Grades are descriptive, reversible and repeatable; they are not acceptance gates.
+- The selected agent prepares input for native `speckit.specify` and creates no project artifact.
+- Spec Kit exclusively owns persistent feature context and Delivery.
+- Real-world application evidence informs the next `spec.md`; convergence alone does not prove maturity.
 
-**Upstream (ai-promptkit itself):** same `docs/` + `prompts/` paths, but no `extern/`; `prompts/handoff.md` is the base (not a wrapper).
+## Artifact discipline
 
-## Daily routines
+- Store workflow context only in `.specify/` and `specs/`.
+- Do not create parallel maturity records, development logs, handoffs, feature summaries, plans, task lists or copied agent prompts.
+- Use native Spec Kit supporting artifacts when its commands generate them.
+- Link evidence rather than copying it; do not silently alter historical claims.
+- ai-promptkit may add only its pinned submodule and installed preset to a consumer.
 
-1. **Takeover** — start of work in a **new chat**: `Run prompts/takeover.md` (`run /prompts/takeover`). First action on consumers: `git submodule update --init --recursive --remote`.
-2. **Handoff** — end of work in the **current chat**: `Run prompts/handoff.md` (`run /prompts/handoff`); extends base steps 1–5 (+ 3b for Python).
-3. Devlog: prepend one row; outcomes only; no chat quotes below table.
-4. TODO: user-stated tasks only — do not invent backlog.
-5. No secrets in docs. Do not commit unless asked (including submodule pointer bumps from takeover).
-6. `pyproject.toml`: consumer Python projects only — [sync-pyproject.md](../prompts/sync-pyproject.md). Not used in ai-promptkit upstream.
+## Engineering-scientific discipline
 
-## Session rhythm
+- Begin from the existing physical, digital, organizational and commercial environment.
+- Explore current practice and credible reuse, standards, open, commercial and integration options before custom build.
+- Distinguish facts, evidence, assumptions, hypotheses, model outputs and observations.
+- Preserve safety, ownership, compatibility, units, time basis, missingness, provenance, uncertainty, reproducibility, observability and rollback where relevant.
+- Label simulation and synthetic data; never substitute them for field evidence.
+- Keep scientific/domain truth independent of UX, identity, licensing, monetization and marketing policy.
+- Never fabricate evidence or perform unauthorized field, deployment or commercial actions.
 
-1. **Handoff** — end of work session in the **current chat** (consumer: `prompts/handoff.md`).
-2. **Takeover** — start of work session in a **new chat** (consumer: `prompts/takeover.md`), especially before coding on human-written code or a new area. Refreshes `extern/ai-promptkit` before explore.
-3. Takeover reads devlog/TODO/conventions first; it does not duplicate handoff (no commit summary, no devlog append).
-4. Takeover stays read-only for project files until the user asks to implement (submodule refresh is allowed); development continues in the same chat after the debrief.
+## Change discipline
 
-## Prompts
-
-- Contract: title → `---` → task body; cwd = repo root.
-- Onboarding: run `extern/ai-promptkit/prompts/init.md` once after submodule add.
-- Do not edit `extern/ai-promptkit/`. Fork single files into `prompts/` only when needed.
-- Resolve paths: `prompts/<file>` first, else `extern/ai-promptkit/prompts/<file>`.
-
-## Design discipline
-
-Minimal correct changes. Template: `extern/ai-promptkit/templates/design.rule.mdc` → `.cursor/rules/design-discipline.mdc`.
+- Preserve unrelated working-tree changes.
+- Do not commit, push, upgrade, deploy or contact external parties without authority.
+- Report only checks actually run and unresolved uncertainty.

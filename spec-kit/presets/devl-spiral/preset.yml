@@ -1,0 +1,37 @@
+schema_version: "1.0"
+
+preset:
+  id: "devl-spiral"
+  name: "DEV|L Spiral"
+  version: "1.0.0"
+  description: "Engineering-scientific and business application context for native Spec Kit Delivery."
+  author: "ai-promptkit maintainers"
+  repository: "https://github.com/m4rt1n3k/ai-promptkit"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=1.0.4"
+
+provides:
+  templates:
+    - type: "template"
+      name: "constitution-template"
+      file: "templates/constitution-addendum.md"
+      description: "DEV|L project principles"
+      strategy: "append"
+    - type: "template"
+      name: "spec-template"
+      file: "templates/spec-addendum.md"
+      description: "Real-world problem and application context"
+      strategy: "append"
+    - type: "template"
+      name: "plan-template"
+      file: "templates/plan-addendum.md"
+      description: "Engineering-scientific implementation obligations"
+      strategy: "append"
+
+tags:
+  - "engineering"
+  - "scientific"
+  - "applied-research"
+  - "business"

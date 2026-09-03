@@ -1,160 +1,65 @@
-# Takeover — understand codebase before coding
+# Takeover — incorporate an existing codebase into Spec Kit
 
-Run at the **start of a new chat** before working on human- or externist-written code, or before taking on a **different area** of the repo. Pair with [handoff.md](handoff.md): handoff ends the previous session; takeover opens the next one.
-
-**Consumers (after init):** use project wrappers — do not require the submodule path daily:
+Invoke once from a codebase that does not yet use Spec Kit:
 
 ```text
-Run prompts/takeover.md
+Read extern/ai-promptkit/prompts/takeover.md and incorporate Spec Kit into this workspace.
 ```
+
+## Task
+
+Adopt native Spec Kit safely without creating parallel project context.
+
+### 1. Preflight
+
+- Read `git status`; preserve unrelated and uncommitted work.
+- Verify `specify version` and the pinned `extern/ai-promptkit` submodule.
+- If `.specify/` already exists, do not reinitialize. Run [doctor](doctor.md) and report the next native command.
+- Identify the active coding-agent integration from the current environment. If it is ambiguous, ask the human for its Spec Kit integration key.
+
+### 2. Understand only what initialization needs
+
+Inspect the existing repository read-only for language/toolchain, entry points, run/test commands, architecture boundaries, safety constraints and files that may collide with Spec Kit initialization. Do not persist a separate analysis or backlog.
+
+Before any forced overwrite, list exact conflicting targets and request approval. Start from a clean, reviewable baseline where possible.
+
+### 3. Initialize native Spec Kit
+
+Follow the official existing-project procedure using the selected integration:
 
 ```text
-Run prompts/handoff.md
+specify init --here --force --integration <key>
 ```
 
-Short forms: `run /prompts/takeover` · `run /prompts/handoff`.
+Review generated changes immediately. Do not alter application code or unrelated documentation.
 
-**Base / upstream only** (this kit repo, or before init):
+### 4. Install the DEV|L preset
 
 ```text
-Read extern/ai-promptkit/prompts/takeover.md and run on this workspace.
+specify preset add --dev extern/ai-promptkit/spec-kit/presets/devl-spiral --priority 10
+specify preset resolve constitution-template
+specify preset resolve spec-template
+specify preset resolve plan-template
 ```
 
-Optional scope: append `Focus on <path or module>.`
+All three resolutions must include `devl-spiral` and preserve native templates.
 
-Overrides default shallow exploration — go deep, cite evidence, stay read-only until the user asks to implement.
+### 5. Hand control to Spec Kit
 
----
+From inspected repository facts, prepare in chat only a concise proposal of durable principles for the native constitution command. Do not write a custom constitution or analysis file.
 
-## Task: Build takeover-ready mental model
+Output:
 
-Target repository (cwd = repo root). Goal: short debrief + serious findings + next steps — then user continues development in this chat. Not a refactor pass; not new docs unless user asks.
-
-### 0. Mode
-
-- **Fresh chat.** You do not have prior session context — read what the repo persisted.
-- **Explore deeply.** Read source, tests, config, and CI — not only README.
-- **Read-only** for codebase exploration unless user explicitly asks to edit files (submodule refresh below is the exception).
-- **Evidence required.** Cite `path` or `path:line` for claims and findings.
-- **No invented backlog.** Do not add TODO items or ADRs unless user asks.
-
-### 0b. Refresh kit submodule (consumers)
-
-If this repo has `extern/ai-promptkit` (or `.gitmodules` entry for ai-promptkit), **before** reading kit prompts or exploring, run from the **consumer repo root**:
-
-```bash
-git submodule update --init --recursive --remote
-```
-
-- Initializes the submodule if missing; fetches latest on the tracked branch (`main`).
-- Report in the debrief: **updated** (new commit) | **already current** | **skipped** (no submodule — e.g. this is ai-promptkit upstream) | **failed** (paste error; continue with whatever is on disk).
-- Do **not** commit the bumped submodule pointer unless the user asks. Note in Open questions / Takeover plan if `git status` shows `extern/ai-promptkit` dirty after update.
-- Then continue using base prompts from the refreshed tree (wrappers still `prompts/takeover.md` / `prompts/handoff.md`).
-
-### 1. Session context (from last handoff)
-
-Read first:
-
-- Last 1–3 rows of `docs/devlog.md` — what was recently done
-- `TODO.md` — user-stated open work
-- `docs/conventions.md`, recent `docs/adr/` if relevant
-
-If user gave a **focus** (path/module), limit exploration to that area plus dependencies; state the scope in the debrief.
-
-### 2. Stated intent
-
-Read, in order of relevance:
-
-- `README.md`, `docs/manual.md`, `docs/conventions.md`
-- Dependency manifests (`pyproject.toml`, `package.json`, `go.mod`, etc.)
-- CI / deploy config (`.github/`, `Dockerfile`, etc.)
-
-Extract: **what the project is for**, **who it serves**, **how it is run/tested**.
-
-### 3. Map the codebase
-
-Identify and list (for full repo or focused area):
-
-- Top-level layout and ownership of each area
-- Entry points (CLI, HTTP handlers, jobs, main binaries)
-- External boundaries (DB, APIs, queues, filesystem)
-- Test layout and what is actually exercised
-
-Use search and file reads; do not guess module names.
-
-### 4. Trace critical flows
-
-Pick **2–3 flows** that matter for safe change in the target area. For each:
-
-1. Entry point
-2. Key modules/functions (with paths)
-3. Data in / data out
-4. Failure modes and where handled
-
-Keep each flow to a tight bullet chain — not an essay.
-
-### 5. Infer operating principles
-
-From **code patterns** (not wishful docs), list 5–10 principles the project mostly follows.
-
-Mark each as **consistent** | **mixed** | **unclear**, with 1–2 example paths.
-
-### 6. Search for serious inconsistencies
-
-Audit for:
-
-- docs vs code drift
-- duplicate / redundant implementations
-- dead or misleading code paths
-- layer or boundary violations
-- convention breaks without local justification
-- fragile coupling (globals, import side effects, circular deps)
-- missing tests on hot or risky paths
-- security or data-integrity risks at trust boundaries
-
-**Report only findings with medium+ takeover risk.** Skip style nits and speculative nice-to-haves.
-
-### 7. Takeover plan
-
-Propose **3–7 ordered next steps** for development **in this chat**:
-
-- what to read next (if anything)
-- what is safe to change first
-- what to avoid until understood
-
-End with: **Ready for user task** — ask what to implement or wait for instruction.
+1. initialization and preset status;
+2. generated files and reviewed collisions;
+3. unresolved safety or repository facts;
+4. proposed constitution principles;
+5. exact next native constitution command;
+6. request for the human's first maturity judgment and agent selection before `speckit.specify`.
 
 ### Constraints
 
-- Do not commit unless asked.
-- Do not bulk-edit docs; deliver in chat unless user requests a file.
-- Do not propose large rewrites in this pass — flag for a later scoped task.
-- If the repo is too large, state scope limits and what you sampled.
-
-### Output format (use these headings exactly)
-
-#### Debrief (≤15 lines)
-
-What this codebase (or focused area) is, how it fits the project, and the 3 most important things to know before changing anything. First line: **Submodule:** updated | already current | skipped | failed.
-
-#### Critical flows
-
-Numbered list (2–3 flows), each with cited path chain.
-
-#### Operating principles
-
-Bullet list with consistency rating and examples.
-
-#### Serious findings
-
-Table or bullets: **Finding** | **Risk** | **Evidence** | **Suggested follow-up (one line)**
-
-If none: say so explicitly.
-
-#### Takeover plan
-
-Numbered next steps (3–7); last item is readiness to code.
-
-#### Open questions
-
-Only genuine unknowns that block safe work — not rhetorical.
+- Create only native Spec Kit output and the installed DEV|L preset.
+- Do not create project wrappers, logs, TODOs, ADRs, summaries or DEV|L context files.
+- Do not commit, push, deploy, upgrade unrelated dependencies or modify application behavior.
+- `takeover` is not used for daily sessions or an already initialized project.
