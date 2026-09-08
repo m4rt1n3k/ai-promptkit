@@ -18,7 +18,7 @@ specify preset resolve spec-template
 specify preset resolve plan-template
 ```
 
-Establish the native constitution, judge the first maturity grade, choose an [agent](../agents/README.md), and invoke native `speckit.specify` with its output.
+Establish the native constitution. If an authorized project mandate exists, reference its provenance; otherwise complete [idea formation and project initiation](research-lifecycle.md). Then judge the first maturity grade, choose an [agent](../agents/README.md), and invoke native `speckit.specify` with its output.
 
 ## Existing codebase without Spec Kit
 

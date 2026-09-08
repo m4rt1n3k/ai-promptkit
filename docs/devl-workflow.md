@@ -1,11 +1,11 @@
 # DEV|L — Develop–Delivery Spiral
 
-DEV|L evolves an applied solution while preserving one delivery authority. External **Develop** decides what the next maturity improvement should achieve; native GitHub Spec Kit **Delivery** specifies and builds it. `|` marks that boundary.
+DEV|L evolves an applied solution while preserving one delivery authority. External **Develop** decides what the next maturity improvement should achieve; native GitHub Spec Kit **Delivery** specifies and builds it. `|` marks that boundary. In the wider [research-to-practice cascade](research-lifecycle.md), Projectant initiates the project before DEV|L, while Scientist and Business lead evidence-triggered exits after it.
 
 ## Evolution
 
 ```text
-real-world evidence
+authorized project mandate or real-world evidence
        ↓
 human maturity judgment + top-level agent selection
        ↓
@@ -47,9 +47,17 @@ Every turn begins with human judgment of current maturity. The human normally se
 6. The delivered result is applied to an authorized real-world problem.
 7. Observed evidence becomes input to the next feature specification and maturity judgment.
 
+Projectant is not a fourth grade and does not direct implementation. It supplies the project mandate and formal commitments; Engineer, Scientist or Business remains the selected top-level agent for a spiral turn.
+
+## Lifecycle handoffs
+
+The first project-backed turn references the authoritative proposal or internal mandate and extracts only commitments relevant to the feature. Every turn identifies evidence worth preserving for the scientific article, business exploitation or project reporting. These downstream needs improve traceability but do not predetermine results or expand feature scope.
+
+Scientist and Business may start their exit tracks only when the human judges the relevant evidence sufficient. If an exit audit exposes missing evidence, it proposes a bounded new spiral turn; it does not silently modify delivered results.
+
 One turn should normally map to one bounded Spec Kit feature. If evidence only exposes a software defect against the current specification, remain inside the current Delivery loop instead of opening another Develop turn.
 
-## Single artifact system
+## Single software-delivery artifact system
 
 Persistent project context exists only in native Spec Kit locations:
 
@@ -58,7 +66,7 @@ Persistent project context exists only in native Spec Kit locations:
 specs/      # specification, plan, tasks and native supporting artifacts
 ```
 
-Do not create DEV|L logs, maturity files, feature summaries, shadow plans or session records elsewhere. When prior application evidence matters, reference or summarize it in the next `spec.md`; use native supporting artifacts produced by Spec Kit commands where appropriate.
+Do not create DEV|L logs, maturity files, feature summaries, shadow plans or session records elsewhere. Proposal, manuscript and exploitation artifacts are legitimate outputs of their own lifecycle stages, but they must reference native development evidence rather than becoming competing software specifications or plans. When prior application evidence matters, reference or summarize it in the next `spec.md`; use native supporting artifacts produced by Spec Kit commands where appropriate.
 
 The [DEV|L preset](../spec-kit/presets/devl-spiral/README.md) appends context to native constitution, specification and plan templates. It does not replace commands or add a competing workflow.
 

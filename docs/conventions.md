@@ -2,37 +2,63 @@
 
 ## Authority
 
-1. Human instruction, safety constraints and accepted decisions.
-2. Consumer repository instructions and accepted project decisions.
+1. Human instruction, safety constraints, institutional authority and accepted decisions.
+2. The authoritative source for the current lifecycle stage: published call/proposal system, consumer repository, publication workspace or business/project workspace.
 3. Installed native Spec Kit command and template for the active Delivery step.
-4. ai-promptkit top-level agent or maintenance prompt.
+4. The selected ai-promptkit lifecycle agent or maintenance prompt.
+
+No agent may infer authority to submit, publish, commit an institution or partner, deploy, price, contract or modify an external record.
+
+## Lifecycle
+
+- The cascade is Idea → Project initiation → central DEV|L spiral → Scientific dissemination and/or Business exploitation.
+- The human owns idea selection and lifecycle gates.
+- Scientist owns state-of-art quality and publication claim integrity.
+- Engineer owns technical/operational feasibility evidence.
+- Business owns market/practice evidence and exploitation design.
+- Projectant owns call compliance, portfolio/partner synthesis and proposal consistency, but is not a DEV|L maturity grade.
+- Each agent requests missing specialist input instead of crossing domain boundaries with invented claims.
 
 ## DEV|L
 
 - Every spiral turn starts with human maturity judgment and agent selection.
-- Grade 1 evolves a minimal working chain; Grade 2 evolves an excellent core solution; Grade 3 evolves a scalable market-ready ecosystem.
+- Grade 1 evolves a minimal working chain; Grade 2 evolves a defensible core solution; Grade 3 evolves a scalable market-ready ecosystem.
 - Grades are descriptive, reversible and repeatable; they are not acceptance gates.
-- The selected agent prepares input for native `speckit.specify` and creates no project artifact.
-- Spec Kit exclusively owns persistent feature context and Delivery.
+- The selected grade agent prepares input for native `speckit.specify` and creates no parallel delivery artifact.
+- Spec Kit exclusively owns persistent software feature context and Delivery.
 - Real-world application evidence informs the next `spec.md`; convergence alone does not prove maturity.
+
+## Evidence discipline
+
+- Distinguish facts, evidence, assumptions, hypotheses, model outputs, recommendations and observations.
+- Cite the source, retrieval/cut-off date and applicable version; record uncertainty and missing access.
+- Link evidence rather than silently copying it; do not alter historical claims.
+- Label simulation and synthetic data; never substitute them for field evidence.
+- Preserve negative and inconclusive evidence across proposal, publication and exploitation work.
+- Never imply partner interest, resource availability, eligibility, novelty, market demand or system access without verification.
 
 ## Artifact discipline
 
-- Store workflow context only in `.specify/` and `specs/`.
+- Store software-delivery context only in `.specify/`, `specs/`, code and version control.
+- Store proposal, manuscript and exploitation outputs only in their designated authoritative systems.
 - Do not create parallel maturity records, development logs, handoffs, feature summaries, plans, task lists or copied agent prompts.
+- Cross-phase handoffs carry stable references, versions, evidence and relevant commitments—not whole mutable workspaces.
 - Use native Spec Kit supporting artifacts when its commands generate them.
-- Link evidence rather than copying it; do not silently alter historical claims.
-- ai-promptkit may add only its pinned submodule and installed preset to a consumer.
 
 ## Engineering-scientific discipline
 
 - Begin from the existing physical, digital, organizational and commercial environment.
 - Explore current practice and credible reuse, standards, open, commercial and integration options before custom build.
-- Distinguish facts, evidence, assumptions, hypotheses, model outputs and observations.
 - Preserve safety, ownership, compatibility, units, time basis, missingness, provenance, uncertainty, reproducibility, observability and rollback where relevant.
-- Label simulation and synthetic data; never substitute them for field evidence.
-- Keep scientific/domain truth independent of UX, identity, licensing, monetization and marketing policy.
-- Never fabricate evidence or perform unauthorized field, deployment or commercial actions.
+- Keep scientific/domain truth independent of proposal incentives, UX, identity, licensing, monetization and marketing policy.
+- Never fabricate evidence or perform unauthorized field, submission, publication or commercial actions.
+
+## External systems
+
+- Verify a connector, identity, permission scope and data freshness before claiming access to Teams, UCEEB, TAČR or partner systems.
+- Default to read-only discovery. Writes, submissions, messages and commitments require explicit human authority.
+- Treat internal portfolio, partner, personnel and proposal data according to confidentiality and purpose limits.
+- When access is unavailable, report the exact limitation and required owner/source; do not reconstruct confidential facts from guesses.
 
 ## Change discipline
 

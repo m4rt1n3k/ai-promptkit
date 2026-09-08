@@ -55,7 +55,7 @@ Output:
 3. unresolved safety or repository facts;
 4. proposed constitution principles;
 5. exact next native constitution command;
-6. request for the human's first maturity judgment and agent selection before `speckit.specify`.
+6. request for initiation provenance; if none exists, route the human to idea formation and Projectant, otherwise request the first maturity judgment and grade-agent selection before `speckit.specify`.
 
 ### Constraints
 

@@ -1,6 +1,6 @@
 # DEV|L Spiral preset
 
-Append-only customization that carries one DEV|L maturity turn inside native Spec Kit artifacts. It adds no commands, feature types or external context files.
+Append-only customization that carries one DEV|L maturity turn inside native Spec Kit artifacts, including traceable handoffs from project initiation and toward scientific dissemination or business exploitation. It adds no commands, feature types or external context files; Projectant is not a fourth maturity grade.
 
 ```text
 specify preset add --dev extern/ai-promptkit/spec-kit/presets/devl-spiral --priority 10

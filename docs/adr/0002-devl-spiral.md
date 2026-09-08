@@ -1,6 +1,6 @@
 # ADR-0002: DEV|L maturity spiral over native Spec Kit
 
-- Status: accepted
+- Status: accepted; lifecycle scope amended by [ADR-0004](0004-research-to-practice-cascade.md)
 - Date: 2026-09-03
 
 ## Context

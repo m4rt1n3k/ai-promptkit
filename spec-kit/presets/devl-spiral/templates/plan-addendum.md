@@ -9,6 +9,9 @@
 - Data semantics, units, time/reference basis, missingness, provenance and uncertainty
 - Observability, reproducibility, failure handling, safe rollout and rollback
 - Separation of field, simulated and synthetic evidence
+- Traceability from relevant project commitments to implementation and verification
+- Versioned evidence outputs suitable for project reporting, article claim audit and exploitation decisions
+- Explicit data/code access, retention, confidentiality, IP and publication constraints
 
 ### Grade 1 — minimal working chain
 
