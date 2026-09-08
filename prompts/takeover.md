@@ -13,13 +13,15 @@ Adopt native Spec Kit safely without creating parallel project context.
 ### 1. Preflight
 
 - Read `git status`; preserve unrelated and uncommitted work.
-- Verify `specify version` and the pinned `extern/ai-promptkit` submodule.
+- Verify `specify version` satisfies the preset's `requires.speckit_version` and verify the pinned `extern/ai-promptkit` submodule.
 - If `.specify/` already exists, do not reinitialize. Run [doctor](doctor.md) and report the next native command.
 - Identify the active coding-agent integration from the current environment. If it is ambiguous, ask the human for its Spec Kit integration key.
 
 ### 2. Understand only what initialization needs
 
 Inspect the existing repository read-only for language/toolchain, entry points, run/test commands, architecture boundaries, safety constraints and files that may collide with Spec Kit initialization. Do not persist a separate analysis or backlog.
+
+For building/energy projects, identify the existing data-to-computation-to-building-output chain and whether timestamped operational history is already collected for later backtesting. Treat missing links as unknowns for the selected grade agent.
 
 Before any forced overwrite, list exact conflicting targets and request approval. Start from a clean, reviewable baseline where possible.
 
@@ -28,7 +30,7 @@ Before any forced overwrite, list exact conflicting targets and request approval
 Follow the official existing-project procedure using the selected integration:
 
 ```text
-specify init --here --force --integration <key>
+specify init --here --force --non-interactive --integration <key>
 ```
 
 Review generated changes immediately. Do not alter application code or unrelated documentation.
@@ -42,7 +44,7 @@ specify preset resolve spec-template
 specify preset resolve plan-template
 ```
 
-All three resolutions must include `devl-spiral` and preserve native templates.
+Inspect all three resolution results: each must include `devl-spiral`, retain the native base and show no composition warning. A successful exit code alone is insufficient. Confirm the installed manifest and templates match the pinned source.
 
 ### 5. Hand control to Spec Kit
 
@@ -55,7 +57,7 @@ Output:
 3. unresolved safety or repository facts;
 4. proposed constitution principles;
 5. exact next native constitution command;
-6. request for initiation provenance; if none exists, route the human to idea formation and Projectant, otherwise request the first maturity judgment and grade-agent selection before `speckit.specify`.
+6. initiation provenance or the human's direct project mandate, then the first human maturity judgment and [grade-agent selection](../agents/README.md) before `speckit.specify`. If no mandate exists, return to idea formation; involve Projectant when formal project initiation is needed.
 
 ### Constraints
 

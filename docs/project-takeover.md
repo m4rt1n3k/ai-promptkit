@@ -2,10 +2,10 @@
 
 ## New project
 
-Install Spec Kit from its official [installation guide](https://github.github.com/spec-kit/installation.html), then from the project root:
+Install Spec Kit from its official [installation guide](https://github.github.com/spec-kit/installation.html). Select the active coding agent's integration key, then from the project root:
 
 ```text
-specify init .
+specify init . --non-interactive --integration <key>
 git submodule add -b main https://github.com/m4rt1n3k/ai-promptkit.git extern/ai-promptkit
 specify preset add --dev extern/ai-promptkit/spec-kit/presets/devl-spiral --priority 10
 ```
@@ -18,7 +18,11 @@ specify preset resolve spec-template
 specify preset resolve plan-template
 ```
 
-Establish the native constitution. If an authorized project mandate exists, reference its provenance; otherwise complete [idea formation and project initiation](research-lifecycle.md). Then judge the first maturity grade, choose an [agent](../agents/README.md), and invoke native `speckit.specify` with its output.
+Inspect the resolution output for `devl-spiral`, a native base and no composition warning; an exit code alone is insufficient. Run [doctor](../prompts/doctor.md) to check the installed preset against its source.
+
+Establish the native constitution. Reference an authorized project mandate, including a direct human assignment; Projectant is needed when formal project initiation is required. If no mandate exists, return to [idea formation](research-lifecycle.md). The human judges the first maturity grade, chooses an [agent](../agents/README.md), and invokes native `speckit.specify` with its output.
+
+Engineer establishes the smallest data-to-computation-to-building-output chain and early data collection for later backtesting. Scientist uses that evidence to improve a selected component through mathematics, numerical methods, algorithms and data structures, with measured accuracy and resource cost. Each role loads its linked procedure on demand.
 
 ## Existing codebase without Spec Kit
 
@@ -36,7 +40,7 @@ Takeover follows the official [existing-project guidance](https://github.github.
 
 ## Existing Spec Kit project
 
-Add the submodule and preset using the new-project commands, verify resolution, then deliberately update the native constitution if the DEV|L principles should apply. Preset installation does not silently rewrite an existing constitution.
+Add the submodule and preset using the corresponding commands above; do not run `specify init` again. Verify resolution, then deliberately update the native constitution if the DEV|L principles should apply. Preset installation preserves a human-authored constitution; a generated template may be refreshed by native Spec Kit.
 
 ## Result
 
@@ -46,8 +50,8 @@ specs/                          # native features when created
 extern/ai-promptkit/            # pinned extension source
 ```
 
-No project wrappers, maturity files, development logs or ai-promptkit copies are created.
+Only the preset is copied by native Spec Kit. No project wrappers, maturity files, development logs or agent/skill installations are created.
 
 ## Version policy
 
-The committed submodule SHA pins the extension and preset source. Use [upgrade](../prompts/upgrade.md) deliberately; normal feature work never advances it.
+The committed submodule SHA pins the extension and preset source. Use [upgrade](../prompts/upgrade.md) deliberately; normal feature work never advances it. An authorized upgrade remains pending until its new gitlink is committed. Doctor distinguishes this expected pending pin from unexplained drift and checks that the installed copy matches the selected source.

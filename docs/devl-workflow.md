@@ -1,6 +1,6 @@
 # DEV|L — Develop–Delivery Spiral
 
-DEV|L evolves an applied solution while preserving one delivery authority. External **Develop** decides what the next maturity improvement should achieve; native GitHub Spec Kit **Delivery** specifies and builds it. `|` marks that boundary. In the wider [research-to-practice cascade](research-lifecycle.md), Projectant initiates the project before DEV|L, while Scientist and Business lead evidence-triggered exits after it.
+DEV|L evolves an applied solution while preserving one delivery authority. External **Develop** decides what the next maturity improvement should achieve; native GitHub Spec Kit **Delivery** specifies and builds it. `|` marks that boundary. In the wider [research-to-practice cascade](research-lifecycle.md), Projectant leads formal project initiation where needed, while Scientist and Business lead evidence-triggered exits after it.
 
 ## Evolution
 
@@ -11,7 +11,7 @@ human maturity judgment + top-level agent selection
        ↓
 DEVELOP: problem → environment → existing solutions → feasibility
        ↓
-grade-appropriate WHAT/WHY prompt
+WHAT/WHY input + traceable planning evidence
        │
        │ DEV|L boundary
        ▼
@@ -31,8 +31,8 @@ Every turn begins with human judgment of current maturity. The human normally se
 
 | Grade | Primary agent | Evolution objective | Typical evidence at this maturity |
 |-------|---------------|---------------------|-----------------------------------|
-| **1 — Preliminary Mockup** | **Engineer** | Minimal working chain through existing systems, real connections and data, a transparent heuristic and safe observable application | End-to-end path works; semantics, constraints and failures are known; reusable interfaces and diagnostics exist |
-| **2 — Minimum Viable Solution** | **Scientist** | Excellent core solution that addresses the underlying problem with the simplest defensible mechanism | Real-environment value exceeds credible baselines; validity, uncertainty, reproducibility and failure limits are measured |
+| **1 — Preliminary Mockup** | **Engineer** | Establish data collection → transparent computation → site/building output quickly, with replaceable links and early useful history | Real path and output are observable; data semantics and availability times permit later replay; interfaces and failure limits are known |
+| **2 — Minimum Viable Solution** | **Scientist** | Improve a bounded part of the working chain through a simple, original and computationally efficient mechanism | Contribution is compared with closest prior work; accuracy, full resource cost, validity and failure limits are demonstrated on relevant evidence |
 | **3 — Versatile Systematic Solution** | **Business** | Scalable, market-ready ecosystem around validated core value | Adoption, UX, integration, operation, support and economics repeat across justified contexts |
 
 “Excellent” or “market-ready” is an evidence claim, never a label earned merely by selecting a grade.
@@ -40,14 +40,16 @@ Every turn begins with human judgment of current maturity. The human normally se
 ## One spiral turn
 
 1. The human judges maturity and selects Engineer, Scientist or Business.
-2. The agent explores the real problem, environment, current practice, existing solutions and feasibility through that grade's lens.
-3. The agent returns a concise prompt; it creates no persistent artifact.
+2. The agent follows the shared [collaboration contract](../agents/README.md#collaboration-contract), loads its relevant skill and requests only specialist input needed for the next decision.
+3. The agent returns the [chat handoff](../agents/README.md#shared-devl-pre-spec-contract): WHAT/WHY for specification and traceable findings for planning; it creates no parallel delivery artifact.
 4. The human invokes native `speckit.specify`. The DEV|L preset records the maturity judgment, inherited evidence, target evolution and application target in `spec.md`.
-5. Native Spec Kit exclusively performs clarification, planning, quality checks, tasking, analysis, implementation and convergence.
+5. Native Spec Kit exclusively performs clarification, planning, quality checks, tasking, analysis, implementation and convergence. Pass the planning evidence to native `speckit.plan` so derivations, contracts and experiment rationale survive in its native artifacts.
 6. The delivered result is applied to an authorized real-world problem.
 7. Observed evidence becomes input to the next feature specification and maturity judgment.
 
 Projectant is not a fourth grade and does not direct implementation. It supplies the project mandate and formal commitments; Engineer, Scientist or Business remains the selected top-level agent for a spiral turn.
+
+Use the shared [lead handover](../agents/README.md#passing-the-lead) at a human-approved role change. The working data chain and scientific claim limits travel with the work. This workflow defines no autonomous operator, evaluation router or automatic grade transition.
 
 ## Lifecycle handoffs
 
@@ -66,7 +68,7 @@ Persistent project context exists only in native Spec Kit locations:
 specs/      # specification, plan, tasks and native supporting artifacts
 ```
 
-Do not create DEV|L logs, maturity files, feature summaries, shadow plans or session records elsewhere. Proposal, manuscript and exploitation artifacts are legitimate outputs of their own lifecycle stages, but they must reference native development evidence rather than becoming competing software specifications or plans. When prior application evidence matters, reference or summarize it in the next `spec.md`; use native supporting artifacts produced by Spec Kit commands where appropriate.
+Do not create DEV|L logs, maturity files, feature summaries, shadow plans or session records elsewhere. Proposal, manuscript and exploitation artifacts are legitimate outputs of their own lifecycle stages, but they must reference native development evidence rather than becoming competing software specifications or plans. Field data and experiment outputs belong in authorized data stores, referenced by version from native artifacts; the artifact rule does not require putting raw time series in Git. When prior application evidence matters, reference or summarize it in the next `spec.md`; use native supporting artifacts produced by Spec Kit commands where appropriate.
 
 The [DEV|L preset](../spec-kit/presets/devl-spiral/README.md) appends context to native constitution, specification and plan templates. It does not replace commands or add a competing workflow.
 

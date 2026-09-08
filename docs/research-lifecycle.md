@@ -29,6 +29,8 @@ A call-led path is also valid: Projectant reads a concrete published call, maps 
 
 ## Stage 1 — initiate the project
 
+For independent work, an explicit human mandate can authorize entry into DEV|L directly. Use Projectant when a call, institutional commitments or formal project governance requires it.
+
 Projectant leads against a frozen call version and an authoritative proposal workspace. It:
 
 1. validates eligibility and extracts every evaluation and formal requirement;
@@ -44,7 +46,7 @@ The partner space is not limited to companies. Municipalities, regions, public b
 
 ## Stage 2 — run the central DEV|L spiral
 
-Projectant hands stable references to project objectives, commitments, evidence targets, deliverables, milestones and constraints into the first relevant feature specification. Development then follows [DEV|L](devl-workflow.md):
+For formal projects, Projectant hands stable references to project objectives, commitments, evidence targets, deliverables, milestones and constraints into the first relevant feature specification. Independent work references its human mandate. Development then follows [DEV|L](devl-workflow.md):
 
 ```text
 human maturity judgment → Engineer | Scientist | Business
@@ -53,6 +55,8 @@ human maturity judgment → Engineer | Scientist | Business
 ```
 
 Each turn is bounded by one dominant uncertainty. Project schedule does not force a maturity grade, and completion of a feature does not prove a scientific or market claim.
+
+Engineer starts the real data-to-site chain and useful history early. Scientist uses that baseline to improve individual links or sections; Business develops repeatable adoption of the validated result. Use the shared [collaboration and handover contract](../agents/README.md#collaboration-contract) to preserve data availability, scientific findings and claim limits between roles.
 
 ## Stage 3A — disseminate as a scientific article
 

@@ -22,15 +22,15 @@ Do not ask Projectant to hide an unsupported gap, missing practice need or infea
 
 ## Enter development
 
-After an authorized project start, Projectant supplies references to accepted commitments, objectives, evidence targets, milestones, partners and constraints. Record relevant provenance in the first `spec.md`; do not copy the complete proposal into Spec Kit.
+Enter with a direct human mandate or an authorized formal project. For the latter, Projectant supplies references to accepted commitments, objectives, evidence targets, milestones, partners and constraints. Record relevant provenance in the first `spec.md`; do not copy the complete proposal into Spec Kit.
 
 ## Run one spiral turn
 
 1. Review evidence from the latest real-world application or project mandate.
 2. Judge the current grade and choose its primary [agent](../agents/README.md), or explicitly choose another lens.
-3. Ask that agent for one native `speckit.specify` prompt.
+3. Ask that agent for the shared [handoff](../agents/README.md#shared-devl-pre-spec-contract). It reads its focused skill as needed and consults other roles only for questions that can change the decision.
 4. Review the result, then invoke the installed `speckit.specify` command.
-5. Continue through native Delivery according to ambiguity and risk:
+5. Supply the handoff's planning evidence to native `speckit.plan`; preserve mathematical findings and data/interface contracts in its native outputs. Continue through native Delivery according to ambiguity and risk:
 
    ```text
    clarify? → plan → checklist? → tasks → analyze? → implement ↔ converge
@@ -43,11 +43,13 @@ Start directly inside the active Spec Kit feature for implementation defects or 
 
 ## Evolution focus
 
-- **Engineer / Grade 1:** make the smallest real end-to-end chain work.
-- **Scientist / Grade 2:** make the core solution exceptionally sound, effective and defensible.
+- **Engineer / Grade 1:** connect collection, simple computation and output at the real site/building quickly; start authorized data capture early and keep links replaceable.
+- **Scientist / Grade 2:** improve the relevant link or section with the simplest original mechanism, justified numerics and measured total cost; use the collected history for credible experiments and backtesting.
 - **Business / Grade 3:** make the validated solution scalable, usable, adoptable and economically sustainable.
 
 Repeat or return when evidence contradicts maturity. Never promote because Delivery merely converged. Projectant never substitutes for a grade agent.
+
+At a human-approved role change, follow the [lead handover](../agents/README.md#passing-the-lead): existing feature and evidence references, baseline, contracts, unresolved uncertainty and next decision. No separate handoff file is needed.
 
 ## Open exit tracks
 

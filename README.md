@@ -2,7 +2,7 @@
 
 Agentic operating model for applied scientific software: from an evidence-backed idea and project proposal, through iterative development, to a scientific paper and transfer into practice.
 
-The **DEV|L — Develop–Delivery Spiral** remains the central execution engine. Project initiation supplies its mandate; dissemination and business exploitation consume only evidence produced by it.
+The **DEV|L — Develop–Delivery Spiral** remains the central execution engine. Engineer establishes the real data-to-site chain early; Scientist uses its history to improve the underlying mechanism with mathematics, algorithms and efficient numerical computation; Business makes validated value repeatable in practice. Project initiation supplies a mandate where needed, and downstream claims stay tied to evidence.
 
 ```mermaid
 flowchart LR
@@ -14,6 +14,7 @@ flowchart LR
     E0[Engineer<br/>feasibility] --> IDEA
     IDEA --> P[Projectant<br/>proposal + consortium]
     P --> START{Authorized project start}
+    IDEA -- direct human mandate --> START
     START -- revise / no-go --> IDEA
     START -- go --> D
 
@@ -38,8 +39,8 @@ flowchart LR
 Inside the spiral, maturity evolves through three reversible grades:
 
 ```text
-Grade 1 · Engineer  → minimal working chain
-Grade 2 · Scientist → excellent, defensible core solution
+Grade 1 · Engineer  → working data-to-site chain + early data history
+Grade 2 · Scientist → simple, original, efficient and defensible core
 Grade 3 · Business  → scalable, market-ready ecosystem
                               ↕
 human maturity judgment at every spiral turn
@@ -64,6 +65,7 @@ Native `.specify/` and `specs/` artifacts remain the exclusive authority for sof
 
 ```text
 agents/      # four lifecycle roles and their collaboration contracts
+skills/      # two focused methods, read on demand through the roles
 docs/        # lifecycle, DEV|L, setup, conventions and decisions
 prompts/     # one-time takeover and integration maintenance
 spec-kit/    # append-only DEV|L preset

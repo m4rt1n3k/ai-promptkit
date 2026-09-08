@@ -4,14 +4,31 @@ ai-promptkit has four cooperating agents. Projectant leads project initiation; E
 
 | Agent | Idea and initiation responsibility | DEV\|L responsibility | Exit responsibility |
 |-------|------------------------------------|------------------------|---------------------|
-| [Engineer](engineer.md) | Technical and operational feasibility | Grade 1: minimal working chain | Reproducible technical package |
-| [Scientist](scientist.md) | State-of-art review, gap and hypotheses | Grade 2: defensible core solution | Leads and assures the scientific article |
+| [Engineer](engineer.md) | Feasibility and earliest useful data collection | Grade 1: data → computation → site/building output, with replaceable links | Working baseline, replayable data and interface contracts |
+| [Scientist](scientist.md) | State of the art, mathematical structure and research hypothesis | Grade 2: original, simple and computationally efficient core mechanism | Defensible claims, reproducible evidence and scientific article |
 | [Business](business.md) | Market, stakeholder and adoption landscape | Grade 3: market-ready ecosystem | Leads transfer and exploitation into practice |
 | [Projectant](projectant.md) | UCEEB–CTU/TAČR call intelligence, portfolio fit, consortium and proposal | Supplies commitments and receives evidence; never replaces a grade agent | Project reporting and follow-on opportunity framing |
 
 The human forms and approves the idea, selects the agent for every spiral turn and authorizes submission, publication, deployment and commercial action.
 
 ## Collaboration contract
+
+### One lead, bounded contributions
+
+The human selects the lead for the current stage or spiral turn. The lead owns the next decision and integrates specialist contributions; Scientist remains responsible for scientific validity across grades. A role is a responsibility, not a requirement to spawn a separate process.
+
+Request specialist input only when it can change the decision. Send the question, relevant source/artifact references, constraints and expected result. Return a conclusion, evidence, assumptions and remaining blocker. Run independent questions in parallel when supported; reuse existing answers and resolve dependencies before further delegation. If delegation is unavailable, apply the needed perspective in the current session and identify any missing expertise or evidence.
+
+Engineer establishes the real chain and starts useful data capture early. Scientist improves a bounded link or section against that baseline; Engineer checks integration and actual resource costs. Business supplies user value and operating-cost constraints; Projectant supplies relevant resources and commitments. The lead surfaces unresolved contradictions rather than merging incompatible claims.
+
+### Skills
+
+Roles own decisions; skills supply reusable methods. Read only the relevant skill when its procedure is needed:
+
+- [field-chain](../skills/field-chain/SKILL.md): establish the data-to-site chain and a usable history for later experiments.
+- [scientific-optimization](../skills/scientific-optimization/SKILL.md): derive and validate an efficient mathematical and computational mechanism.
+
+These are repository-local instructions loaded through the role links. They require no copied prompts, automatic discovery, additional agent runtime or installation. Business and Projectant keep their shorter procedures in their role files.
 
 ### Idea formation
 
@@ -27,18 +44,18 @@ Projectant is the operational lead. It requests bounded contributions from the o
 
 ### Shared DEV|L pre-spec contract
 
-The selected grade agent returns one concise prompt for native `speckit.specify` containing:
+The selected grade agent returns one concise handoff in chat with two labelled parts:
 
-- human-selected grade and agent;
-- initiation provenance, project commitments and inherited real-world evidence;
-- actual problem, actors, value and current practice;
-- existing physical, digital, organizational and commercial environment;
-- credible existing solutions and reuse/integrate/build feasibility;
-- the smallest grade-appropriate outcome for this turn;
-- observable real-world success, uncertainty, constraints and explicit deferrals;
-- evidence that must be preserved for scientific dissemination and business exploitation.
+1. **Specify input — WHAT/WHY:** human-selected grade and lead; proposal/internal mandate or direct human instruction; problem, value and existing environment; inherited evidence and credible alternatives; one dominant uncertainty and smallest useful outcome; observable success, accuracy/resource limits and deferrals; evidence sources and intended consumers.
+2. **Planning evidence:** only findings needed to preserve the reasoning—existing chain/data contracts, mathematical derivation, candidate algorithm or representation, assumptions, total cost/error model, rejected alternatives and decisive experiment, as applicable. Distinguish established constraints from design hypotheses.
 
-The agent creates no parallel delivery artifact. The human invokes installed Spec Kit, which persists approved development context in the feature specification.
+The human invokes native `speckit.specify` with the first part. Carry the second part into native `speckit.plan`, which owns its preservation in `plan.md` and native supporting artifacts such as `research.md`. Do not discard an essential derivation to make the specification short, or turn an untested algorithm into a mandatory requirement. An active feature's implementation/design question stays in native Delivery; it does not require another specification.
+
+The handoff creates no separate delivery file. Data and experiment outputs remain in their authorized stores, linked by version or immutable identifier from native artifacts.
+
+### Passing the lead
+
+At a human-approved handover, point the incoming lead to the current native feature, working baseline, data/evidence versions, preserved contracts, unresolved uncertainty and next decision. It first checks that these inputs are usable, then requests only missing information. Engineer → Scientist preserves collection and replay; Scientist → Business preserves the validated core and claim limits. Repeat or return when needed; do not create a handover log or copy a backlog.
 
 ### Exit from the spiral
 
