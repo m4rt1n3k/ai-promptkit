@@ -1,6 +1,6 @@
 # Agent registry
 
-ai-promptkit has four cooperating agents. Projectant leads project initiation; Engineer, Scientist and Business support idea formation, take grade-specific turns inside the central DEV|L spiral, and produce downstream evidence or exploitation outputs.
+ai-promptkit has five cooperating agents. [Spectre](spectre.md) sits on the top floor beside the human as the idea-capture, prompt-refinement and routing layer; it leads no stage. Projectant leads project initiation; Engineer, Scientist and Business support idea formation, take grade-specific turns inside the central DEV|L spiral, and produce downstream evidence or exploitation outputs.
 
 | Agent | Idea and initiation responsibility | DEV\|L responsibility | Exit responsibility |
 |-------|------------------------------------|------------------------|---------------------|
@@ -8,6 +8,7 @@ ai-promptkit has four cooperating agents. Projectant leads project initiation; E
 | [Scientist](scientist.md) | State of the art, mathematical structure and research hypothesis | Grade 2: original, simple and computationally efficient core mechanism | Defensible claims, reproducible evidence and scientific article |
 | [Business](business.md) | Market, stakeholder and adoption landscape | Grade 3: market-ready ecosystem | Leads transfer and exploitation into practice |
 | [Projectant](projectant.md) | UCEEB–CTU/TAČR call intelligence, portfolio fit, consortium and proposal | Supplies commitments and receives evidence; never replaces a grade agent | Project reporting and follow-on opportunity framing |
+| [Spectre](spectre.md) | Captures rough ideas faithfully, helps the human orient in their own thinking, refines the request, fills gaps by asking, routes to agent and LLM, links related projects and ideas | Prepares input for the chosen agent; never leads a turn or alters intent | Keeps the horizontal portfolio view across projects and ideas |
 
 The human forms and approves the idea, selects the agent for every spiral turn and authorizes submission, publication, deployment and commercial action.
 
@@ -64,6 +65,8 @@ Exit is evidence-triggered, not schedule-triggered. Scientist may lead a publica
 ## Invocation
 
 ```text
+Read extern/ai-promptkit/agents/spectre.md and help me shape this rough idea: <notes, fragments, half-formed thoughts>
+Read extern/ai-promptkit/agents/spectre.md and refine this request before execution: <human request>
 Read extern/ai-promptkit/agents/projectant.md and lead project initiation for this published call and context: <call + context>
 Read extern/ai-promptkit/agents/engineer.md and assess idea feasibility: <idea>
 Read extern/ai-promptkit/agents/scientist.md and produce a state-of-art review for idea formation: <idea>

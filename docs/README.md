@@ -2,6 +2,8 @@
 
 | Document | Owns |
 |----------|------|
+| [backbone.md](backbone.md) | Proposed spine: one Spec Kit `speckit` workflow run per turn |
+| [similar-work.md](similar-work.md) | Notes on nearby methods and the resulting kit changes |
 | [research-lifecycle.md](research-lifecycle.md) | Idea → initiation → DEV\|L → article / practice cascade |
 | [devl-workflow.md](devl-workflow.md) | DEV|L evolution, grades and Spec Kit boundary |
 | [project-takeover.md](project-takeover.md) | New project setup and existing-codebase takeover |

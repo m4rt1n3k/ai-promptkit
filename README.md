@@ -60,11 +60,12 @@ Native `.specify/` and `specs/` artifacts remain the exclusive authority for sof
 - New or existing codebase: follow [project takeover](docs/project-takeover.md).
 - One spiral turn: choose [Engineer, Scientist, or Business](agents/README.md), then invoke native `speckit.specify` with the prepared input.
 - Published call or project application: invoke [Projectant](agents/projectant.md).
+- Rough idea, unpolished request, or unsure which agent or model: invoke [Spectre](agents/spectre.md) first.
 
 ## Repository
 
 ```text
-agents/      # four lifecycle roles and their collaboration contracts
+agents/      # four lifecycle roles, Spectre routing layer, collaboration contracts
 skills/      # two focused methods, read on demand through the roles
 docs/        # lifecycle, DEV|L, setup, conventions and decisions
 prompts/     # one-time takeover and integration maintenance
